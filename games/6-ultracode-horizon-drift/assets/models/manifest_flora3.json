@@ -1,0 +1,462 @@
+{
+  "group": "flora3",
+  "models": [
+    {
+      "id": "obsidian_spire_a",
+      "file": "obsidian_spire_a.glb",
+      "kind": "rock",
+      "biomes": [
+        "volcanic"
+      ],
+      "size": [
+        5.97,
+        6.45,
+        5.06
+      ],
+      "base_y": -0.05,
+      "collider": {
+        "shape": "cylinder",
+        "radius": 1.6,
+        "height": 3.0,
+        "offset_y": 0.0
+      },
+      "tris": 4412,
+      "tintable": [
+        "glow"
+      ],
+      "notes": "Cluster of glassy black obsidian spires on a cracked mound with glowing red fissures (emissive). Origin at ground centre; tallest spire ~6.3 m."
+    },
+    {
+      "id": "rock_lava_a",
+      "file": "rock_lava_a.glb",
+      "kind": "rock",
+      "biomes": [
+        "volcanic"
+      ],
+      "size": [
+        3.37,
+        2.7,
+        3.59
+      ],
+      "base_y": -0.1,
+      "collider": {
+        "shape": "sphere",
+        "radius": 1.15,
+        "offset_y": 0.3
+      },
+      "tris": 2668,
+      "tintable": [
+        "glow",
+        "hot"
+      ],
+      "notes": "Dark basalt plates separated by glowing V-grooves (emissive); origin at ground centre; rotate freely around Y."
+    },
+    {
+      "id": "vent_stack_a",
+      "file": "vent_stack_a.glb",
+      "kind": "rock",
+      "biomes": [
+        "volcanic"
+      ],
+      "size": [
+        7.36,
+        5.32,
+        7.07
+      ],
+      "base_y": -0.05,
+      "collider": {
+        "shape": "cylinder",
+        "radius": 1.7,
+        "height": 4.5,
+        "offset_y": 0.0
+      },
+      "tris": 5002,
+      "tintable": [
+        "glow",
+        "hot"
+      ],
+      "notes": "Chimney vent stack ~5 m with glowing magma mouth (emissive 'glow'/'hot'), sulphur crust rim, rubble skirt. Origin at ground centre of the stack; a small side fumarole sits at +X/+Y. Smoke/steam particles should be emitted at (0, 5.0, 0) Godot."
+    },
+    {
+      "id": "tree_charred_a",
+      "file": "tree_charred_a.glb",
+      "kind": "flora",
+      "biomes": [
+        "volcanic"
+      ],
+      "size": [
+        4.48,
+        6.22,
+        3.68
+      ],
+      "base_y": -0.1,
+      "collider": {
+        "shape": "cylinder",
+        "radius": 0.6,
+        "height": 3.5,
+        "offset_y": 0.0
+      },
+      "tris": 4351,
+      "tintable": [
+        "ash"
+      ],
+      "notes": "Burnt dead tree ~6 m: thick furrowed trunk, lighter scorched limbs, broken limbs with glowing cut ends, glowing ember slit/cracks (emissive 'ember'), fallen log + dark ash mounds with ember pockets at the base. Origin at trunk base."
+    },
+    {
+      "id": "magma_crystal_a",
+      "file": "magma_crystal_a.glb",
+      "kind": "rock",
+      "biomes": [
+        "volcanic"
+      ],
+      "size": [
+        2.49,
+        2.25,
+        2.21
+      ],
+      "base_y": -0.069,
+      "collider": {
+        "shape": "cylinder",
+        "radius": 0.9,
+        "height": 1.8,
+        "offset_y": 0.0
+      },
+      "tris": 2680,
+      "tintable": [
+        "body",
+        "facet",
+        "tip"
+      ],
+      "notes": "Cluster of glowing red-orange hex crystals (flat shaded, emissive body/facet/tip) on a dark cracked base. ~2.2 m tall. Origin at ground centre. Good for a light source (OmniLight orange at (0,1.0,0))."
+    },
+    {
+      "id": "mushroom_toxic_a",
+      "file": "mushroom_toxic_a.glb",
+      "kind": "flora",
+      "biomes": [
+        "toxic",
+        "swamp",
+        "exotic"
+      ],
+      "size": [
+        4.6,
+        4.66,
+        4.21
+      ],
+      "base_y": -0.05,
+      "collider": {
+        "shape": "cylinder",
+        "radius": 0.45,
+        "height": 3.0,
+        "offset_y": 0.0
+      },
+      "tris": 4884,
+      "tintable": [
+        "cap",
+        "glow"
+      ],
+      "notes": "Giant toxic mushroom ~4.2 m (purple cap, lime glowing spots/gills/rim = emissive 'glow') with 5 small satellite mushrooms + mycelium roots. Origin at stem base."
+    },
+    {
+      "id": "mushroom_toxic_b",
+      "file": "mushroom_toxic_b.glb",
+      "kind": "flora",
+      "biomes": [
+        "toxic",
+        "swamp"
+      ],
+      "size": [
+        3.04,
+        2.28,
+        2.85
+      ],
+      "base_y": -0.05,
+      "collider": {
+        "shape": "cylinder",
+        "radius": 0.9,
+        "height": 1.2,
+        "offset_y": 0.0
+      },
+      "tris": 3772,
+      "tintable": [
+        "cap",
+        "glow"
+      ],
+      "notes": "Cluster of 8 toxic mushrooms ~2 m tall (green caps, violet emissive 'glow' spots/gills) with mycelium mound. Origin at cluster centre on the ground."
+    },
+    {
+      "id": "tentacle_plant_a",
+      "file": "tentacle_plant_a.glb",
+      "kind": "flora",
+      "biomes": [
+        "toxic",
+        "swamp",
+        "exotic"
+      ],
+      "size": [
+        3.97,
+        2.91,
+        3.72
+      ],
+      "base_y": 0.0,
+      "collider": {
+        "shape": "cylinder",
+        "radius": 0.8,
+        "height": 1.2,
+        "offset_y": 0.0
+      },
+      "tris": 2860,
+      "tintable": [
+        "flesh",
+        "glow"
+      ],
+      "notes": "Tentacle plant ~3 m: 12 curling tendrils with suckers and glowing tips (emissive 'glow') on a fleshy mound. Origin at centre of the base on the ground. Sway tendrils with a vertex shader or rotate whole model slightly."
+    },
+    {
+      "id": "spore_pod_a",
+      "file": "spore_pod_a.glb",
+      "kind": "flora",
+      "biomes": [
+        "toxic",
+        "swamp",
+        "exotic"
+      ],
+      "size": [
+        1.48,
+        1.6,
+        1.62
+      ],
+      "base_y": -0.03,
+      "collider": {
+        "shape": "cylinder",
+        "radius": 0.45,
+        "height": 1.2,
+        "offset_y": 0.0
+      },
+      "tris": 2977,
+      "tintable": [
+        "leaf",
+        "pod",
+        "sac"
+      ],
+      "notes": "Spore pod plant ~1.5 m: leaf rosette, one large open pod with glowing spore sacs (emissive 'sac') and 4 secondary pods (2 closed bud-pods per side). Origin at base centre."
+    },
+    {
+      "id": "bulb_plant_a",
+      "file": "bulb_plant_a.glb",
+      "kind": "flora",
+      "biomes": [
+        "toxic",
+        "swamp",
+        "exotic"
+      ],
+      "size": [
+        1.65,
+        0.97,
+        1.75
+      ],
+      "base_y": -0.03,
+      "collider": {
+        "shape": "cylinder",
+        "radius": 0.4,
+        "height": 0.8,
+        "offset_y": 0.0
+      },
+      "tris": 2586,
+      "tintable": [
+        "leaf",
+        "bulb"
+      ],
+      "notes": "Lantern bulb plant ~1 m: leaf rosette + 6 arching stems with hanging glowing blue bulbs (emissive 'bulb'). Origin at base centre."
+    },
+    {
+      "id": "res_ore_ferrite",
+      "file": "res_ore_ferrite.glb",
+      "kind": "resource",
+      "biomes": [
+        "any"
+      ],
+      "size": [
+        1.64,
+        1.23,
+        1.79
+      ],
+      "base_y": -0.021,
+      "collider": {
+        "shape": "sphere",
+        "radius": 0.7,
+        "offset_y": 0.0
+      },
+      "tris": 1252,
+      "tintable": [],
+      "notes": "Resource 'Ferrite': grey faceted boulder with metallic orange veins and nugget crystals (emissive 'ore' 2.0 / 'nugget' 2.2, pickup highlight). ~1.1 m. Origin at ground centre. Pickup radius ~1.2 m."
+    },
+    {
+      "id": "res_fuel_crystal",
+      "file": "res_fuel_crystal.glb",
+      "kind": "resource",
+      "biomes": [
+        "any"
+      ],
+      "size": [
+        1.61,
+        1.37,
+        1.43
+      ],
+      "base_y": -0.021,
+      "collider": {
+        "shape": "cylinder",
+        "radius": 0.55,
+        "height": 1.2,
+        "offset_y": 0.0
+      },
+      "tris": 1302,
+      "tintable": [],
+      "notes": "Resource 'Zyrite' (fuel): slender blue-white glowing hex crystal cluster (emissive body/facet/tip, strength 2.6-4.2) on a dark rock bed. ~1.3 m. Origin at ground centre. Add a cyan OmniLight at (0,0.7,0) if desired."
+    },
+    {
+      "id": "res_bulb_plant",
+      "file": "res_bulb_plant.glb",
+      "kind": "resource",
+      "biomes": [
+        "any"
+      ],
+      "size": [
+        1.21,
+        0.71,
+        1.05
+      ],
+      "base_y": -0.02,
+      "collider": {
+        "shape": "cylinder",
+        "radius": 0.4,
+        "height": 0.7,
+        "offset_y": 0.0
+      },
+      "tris": 1903,
+      "tintable": [],
+      "notes": "Resource 'Sodium' plant ~0.8 m: spiky green rosette around a cluster of glowing yellow-green sacs with orange glowing tips (emissive 'sac' 2.2, 'tip' 4.0). Origin at base centre."
+    },
+    {
+      "id": "res_warp_crystal",
+      "file": "res_warp_crystal.glb",
+      "kind": "resource",
+      "biomes": [
+        "any"
+      ],
+      "size": [
+        1.42,
+        1.2,
+        1.29
+      ],
+      "base_y": 0.0,
+      "collider": {
+        "shape": "sphere",
+        "radius": 0.6,
+        "offset_y": 0.2
+      },
+      "tris": 2768,
+      "tintable": [],
+      "notes": "Resource 'Voidstone' (warp): twisted magenta-violet gem hovering at y~0.7 over a cracked stone plate with violet seams, broken orbiting ring + 7 shards (all static; Godot may bob/spin the node about Y). Emissive 2.0-4.6. Origin at ground centre."
+    },
+    {
+      "id": "rock_basalt_a",
+      "file": "rock_basalt_a.glb",
+      "kind": "rock",
+      "biomes": [
+        "volcanic"
+      ],
+      "size": [
+        5.89,
+        3.67,
+        6.15
+      ],
+      "base_y": -0.3,
+      "collider": {
+        "shape": "cylinder",
+        "radius": 2.6,
+        "height": 3.0,
+        "offset_y": 0.0
+      },
+      "tris": 1592,
+      "tintable": [],
+      "notes": "Columnar basalt formation (19 hex columns, tallest ~3.4 m above ground) on a thin glowing magma bed (emissive 'glow' at z~0.04, optional). Origin at formation centre on the ground; columns sunk 0.3 m below the ground plane."
+    },
+    {
+      "id": "fungus_cap_a",
+      "file": "fungus_cap_a.glb",
+      "kind": "flora",
+      "biomes": [
+        "toxic",
+        "swamp"
+      ],
+      "size": [
+        2.5,
+        1.62,
+        2.35
+      ],
+      "base_y": -0.05,
+      "collider": {
+        "shape": "cylinder",
+        "radius": 0.55,
+        "height": 1.5,
+        "offset_y": 0.0
+      },
+      "tris": 2690,
+      "tintable": [
+        "cap",
+        "glow"
+      ],
+      "notes": "Shelf (bracket) fungus on a mossy stump ~1.6 m: 8 stacked half-disc brackets with banded tops, pale gills underneath and an emissive rim ('glow'). Origin at stump base."
+    },
+    {
+      "id": "acid_pool_rim_a",
+      "file": "acid_pool_rim_a.glb",
+      "kind": "rock",
+      "biomes": [
+        "toxic"
+      ],
+      "size": [
+        8.2,
+        1.7,
+        7.79
+      ],
+      "base_y": -0.2,
+      "collider": {
+        "shape": "none",
+        "offset_y": 0.0
+      },
+      "tris": 4548,
+      "tintable": [
+        "acid"
+      ],
+      "notes": "Rock ring (~8 m diameter, outer radius ~4 m, 26 rocks + berm) around a glowing acid pool (emissive 'acid' surface at y~0.2, recessed inside the ring). Origin at pool centre on the ground. Collider: none (ring rocks are decorative); add a trigger Area (radius 2.6) for acid damage."
+    },
+    {
+      "id": "ash_tree_a",
+      "file": "ash_tree_a.glb",
+      "kind": "flora",
+      "biomes": [
+        "volcanic"
+      ],
+      "size": [
+        5.79,
+        6.24,
+        5.48
+      ],
+      "base_y": -0.1,
+      "collider": {
+        "shape": "cylinder",
+        "radius": 0.5,
+        "height": 3.2,
+        "offset_y": 0.0
+      },
+      "tris": 5337,
+      "tintable": [
+        "leaf"
+      ],
+      "notes": "Ash tree ~7 m: sinuous grey trunk with layered flat ash-grey canopy pads and hanging ember berries (emissive 'ember'). Origin at trunk base."
+    }
+  ],
+  "collider_note": "collider.offset_y = height of the collider's BOTTOM above the model origin (ground contact); radius/height/size in metres, shape centred on the model's vertical axis."
+}

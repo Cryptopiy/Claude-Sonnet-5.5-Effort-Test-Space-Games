@@ -1,0 +1,458 @@
+{
+  "group": "flora1",
+  "models": [
+    {
+      "id": "tree_broadleaf_a",
+      "file": "tree_broadleaf_a.glb",
+      "kind": "flora",
+      "biomes": [
+        "lush"
+      ],
+      "size": [
+        8.32,
+        9.65,
+        7.87
+      ],
+      "base_y": -0.183,
+      "collider": {
+        "shape": "cylinder",
+        "radius": 0.45,
+        "height": 4.0,
+        "offset_y": 0.0
+      },
+      "tris": 7965,
+      "tintable": [
+        "leaf"
+      ],
+      "nodes": {
+        "mesh": [
+          "tree_broadleaf_a_mesh"
+        ]
+      },
+      "notes": "Origin at trunk base (z=0, roots dip 0.1 m under). Lush broadleaf tree ~9 m, canopy radius ~4 m. Materials: bark, bark_dark, leaf_dark/leaf/leaf_light (tintable via 'leaf'), fruit (emissive pink dots). Foliage leaf cards are two-sided geometry."
+    },
+    {
+      "id": "tree_broadleaf_b",
+      "file": "tree_broadleaf_b.glb",
+      "kind": "flora",
+      "biomes": [
+        "lush"
+      ],
+      "size": [
+        8.33,
+        7.33,
+        8.8
+      ],
+      "base_y": -0.26,
+      "collider": {
+        "shape": "cylinder",
+        "radius": 0.45,
+        "height": 3.0,
+        "offset_y": 0.0
+      },
+      "tris": 5038,
+      "tintable": [
+        "leaf"
+      ],
+      "nodes": {
+        "mesh": [
+          "tree_broadleaf_b_mesh"
+        ]
+      },
+      "notes": "Origin at trunk base. Weeping umbrella tree ~7 m with flat tiered canopy (~5 m wide), sunset palette (crimson/orange/amber) + small emissive blossoms. Materials: bark, bark_dark, leaf_dark/leaf/leaf_light (tintable 'leaf'), blossom (emissive)."
+    },
+    {
+      "id": "tree_conifer_a",
+      "file": "tree_conifer_a.glb",
+      "kind": "flora",
+      "biomes": [
+        "lush"
+      ],
+      "size": [
+        7.31,
+        14.59,
+        7.38
+      ],
+      "base_y": -0.086,
+      "collider": {
+        "shape": "cylinder",
+        "radius": 0.5,
+        "height": 14.0,
+        "offset_y": 0.0
+      },
+      "tris": 1946,
+      "tintable": [
+        "leaf"
+      ],
+      "nodes": {
+        "mesh": [
+          "tree_conifer_a_mesh"
+        ]
+      },
+      "notes": "Origin at trunk base. Tall layered conifer ~14 m, 14 star-shaped drooping skirts (tier radius 3.2 m at the bottom). Materials: bark, bark_dark, leaf_dark/leaf/leaf_light (tintable 'leaf'), cone."
+    },
+    {
+      "id": "flower_cluster_a",
+      "file": "flower_cluster_a.glb",
+      "kind": "flora",
+      "biomes": [
+        "lush",
+        "exotic",
+        "swamp"
+      ],
+      "size": [
+        0.53,
+        0.57,
+        0.45
+      ],
+      "base_y": -0.008,
+      "collider": {
+        "shape": "none"
+      },
+      "tris": 1407,
+      "tintable": [
+        "petal"
+      ],
+      "nodes": {
+        "mesh": [
+          "flower_cluster_a_mesh"
+        ]
+      },
+      "notes": "Origin at ground centre. Cluster of 7 flowers with emissive petals (petal_a pink, petal_b cyan; tintable 'petal') and glowing yellow cores, ~0.5 m. Two-sided petals/leaves."
+    },
+    {
+      "id": "exotic_crystal_tree_a",
+      "file": "exotic_crystal_tree_a.glb",
+      "kind": "flora",
+      "biomes": [
+        "exotic"
+      ],
+      "size": [
+        5.59,
+        7.49,
+        4.83
+      ],
+      "base_y": -0.169,
+      "collider": {
+        "shape": "cylinder",
+        "radius": 0.6,
+        "height": 4.5,
+        "offset_y": 0.0
+      },
+      "tris": 4698,
+      "tintable": [
+        "crystal"
+      ],
+      "nodes": {
+        "mesh": [
+          "exotic_crystal_tree_a_mesh"
+        ]
+      },
+      "notes": "Origin at trunk base. Dark twisted crystalline trunk with 6 translucent crystal branches (alpha 0.55, emissive) + opaque emissive inner cores (core). Materials: trunk, crystal_a (cyan), crystal_b (magenta) [tintable 'crystal'], core (emissive 6.0). Flat shaded. ~7 m."
+    },
+    {
+      "id": "tree_swamp_a",
+      "file": "tree_swamp_a.glb",
+      "kind": "flora",
+      "biomes": [
+        "swamp"
+      ],
+      "size": [
+        9.33,
+        8.93,
+        10.19
+      ],
+      "base_y": -0.084,
+      "collider": {
+        "shape": "cylinder",
+        "radius": 0.75,
+        "height": 5.0,
+        "offset_y": 0.0
+      },
+      "tris": 7434,
+      "tintable": [
+        "leaf",
+        "vine"
+      ],
+      "nodes": {
+        "mesh": [
+          "tree_swamp_a_mesh"
+        ]
+      },
+      "notes": "Origin at the centre of the buttress/stilt-root hub at ground level (z=0). Gnarled swamp tree ~8 m with 7 arching stilt roots (reach ~2.9 m), mossy bark, drooping foliage clumps, hanging vines/moss beards and bioluminescent glow bulbs (glow, emissive 3.5). Collider covers the trunk only."
+    },
+    {
+      "id": "reed_cluster_a",
+      "file": "reed_cluster_a.glb",
+      "kind": "flora",
+      "biomes": [
+        "swamp",
+        "lush",
+        "ocean"
+      ],
+      "size": [
+        1.36,
+        2.5,
+        1.39
+      ],
+      "base_y": -0.005,
+      "collider": {
+        "shape": "none"
+      },
+      "tris": 700,
+      "tintable": [
+        "reed"
+      ],
+      "nodes": {
+        "mesh": [
+          "reed_cluster_a_mesh"
+        ]
+      },
+      "notes": "Origin at ground centre. 26 two-sided reed blades (1.1-2.1 m, a few dry) + 5 cattail spikes (cattail). Materials: reed, reed_tip, reed_dry [tintable 'reed'], cattail, stem. Intended for swamp shores / MultiMesh."
+    },
+    {
+      "id": "fern_a",
+      "file": "fern_a.glb",
+      "kind": "flora",
+      "biomes": [
+        "lush",
+        "swamp",
+        "ocean"
+      ],
+      "size": [
+        1.76,
+        0.76,
+        1.7
+      ],
+      "base_y": -0.057,
+      "collider": {
+        "shape": "none"
+      },
+      "tris": 2085,
+      "tintable": [
+        "leaf"
+      ],
+      "nodes": {
+        "mesh": [
+          "fern_a_mesh"
+        ]
+      },
+      "notes": "Origin at ground centre. Rosette of 11 arching fronds with two-sided leaflets (3 green tones, dark base -> light tips; tintable 'leaf') + 2 fiddleheads, ~1.6 m wide."
+    },
+    {
+      "id": "palm_tree_a",
+      "file": "palm_tree_a.glb",
+      "kind": "flora",
+      "biomes": [
+        "ocean",
+        "lush",
+        "swamp"
+      ],
+      "size": [
+        6.44,
+        8.23,
+        6.32
+      ],
+      "base_y": -0.102,
+      "collider": {
+        "shape": "cylinder",
+        "radius": 0.3,
+        "height": 4.0,
+        "offset_y": 0.0
+      },
+      "tris": 3962,
+      "tintable": [
+        "frond"
+      ],
+      "nodes": {
+        "mesh": [
+          "palm_tree_a_mesh"
+        ]
+      },
+      "notes": "Origin at trunk base. Palm leaning towards +X (Godot +X) by ~2 m at the crown, ~8.4 m tall; ringed trunk (trunk/trunk_ring alternate), 13 feathery drooping fronds (frond/frond_dark [tintable 'frond'], rachis), 6 coconuts. Collider is only the lower trunk."
+    },
+    {
+      "id": "coral_rock_a",
+      "file": "coral_rock_a.glb",
+      "kind": "flora",
+      "biomes": [
+        "ocean"
+      ],
+      "size": [
+        3.44,
+        2.44,
+        3.09
+      ],
+      "base_y": 0.0,
+      "collider": {
+        "shape": "box",
+        "size": [
+          2.5,
+          1.1,
+          2.1
+        ],
+        "offset_y": 0.0
+      },
+      "tris": 3178,
+      "tintable": [
+        "coral"
+      ],
+      "nodes": {
+        "mesh": [
+          "coral_rock_a_mesh"
+        ]
+      },
+      "notes": "Origin at ground centre. Blue-grey rock (rock, rock_dark) with branching staghorn corals (coral_a orange, coral_b pink), brain coral and tube corals / sea fan (coral_c purple) and small emissive cyan polyps/tips (glow 2.6). ~3 m wide, ~2 m high. Collider: use sphere/box around the rock mass."
+    },
+    {
+      "id": "exotic_spiral_horn_a",
+      "file": "exotic_spiral_horn_a.glb",
+      "kind": "flora",
+      "biomes": [
+        "exotic"
+      ],
+      "size": [
+        4.04,
+        6.56,
+        4.3
+      ],
+      "base_y": -0.207,
+      "collider": {
+        "shape": "cylinder",
+        "radius": 0.7,
+        "height": 6.0,
+        "offset_y": 0.0
+      },
+      "tris": 3246,
+      "tintable": [
+        "sheath",
+        "horn_b"
+      ],
+      "nodes": {
+        "mesh": [
+          "exotic_spiral_horn_a_mesh"
+        ]
+      },
+      "notes": "Origin at the base centre. ~6 m spiral horn (2-lobed helical ridges, 1.5 turns, cream/violet stripes via horn_a/horn_b) with a golden emissive tip (glow, 5.0), 4 satellite horns 2-3.7 m, teal sheath leaves (sheath, sheath_b) and a few floating glow spores. The main horn leans to +X."
+    },
+    {
+      "id": "floating_rock_a",
+      "file": "floating_rock_a.glb",
+      "kind": "flora",
+      "biomes": [
+        "exotic"
+      ],
+      "size": [
+        6.17,
+        7.53,
+        6.64
+      ],
+      "base_y": 0.0,
+      "collider": {
+        "shape": "cylinder",
+        "radius": 2.8,
+        "height": 3.0,
+        "offset_y": 2.5
+      },
+      "tris": 3559,
+      "tintable": [
+        "grass",
+        "leaf",
+        "crystal"
+      ],
+      "nodes": {
+        "mesh": [
+          "floating_rock_a_mesh"
+        ]
+      },
+      "notes": "Origin = lowest point (root tips) at z=0 directly under the island centre; the island itself floats ~1-3 m above (the game should hover it: y_offset as needed). ~6 m wide, ~6 m tall incl. crystals. Collider cylinder spans y = 2.5 .. 5.5 (the rock mass); crystals/roots have no collider. Materials: rock, grass, leaf, root, crystal (translucent, emissive 2.5), core (emissive 6)."
+    },
+    {
+      "id": "bush_lush_a",
+      "file": "bush_lush_a.glb",
+      "kind": "flora",
+      "biomes": [
+        "lush"
+      ],
+      "size": [
+        1.89,
+        1.28,
+        1.9
+      ],
+      "base_y": -0.02,
+      "collider": {
+        "shape": "none"
+      },
+      "tris": 2525,
+      "tintable": [
+        "leaf"
+      ],
+      "nodes": {
+        "mesh": [
+          "bush_lush_a_mesh"
+        ]
+      },
+      "notes": "Origin at ground centre. Lush leafy shrub ~1.25 m high, ~2 m wide: ~230 overlapping two-sided folded leaf cards around a hidden dark core, 7 woody stems, clustered emissive pink berries. Materials: stem, leaf_dark/leaf/leaf_light (tintable 'leaf'), berry (emissive)."
+    },
+    {
+      "id": "grass_tuft_a",
+      "file": "grass_tuft_a.glb",
+      "kind": "flora",
+      "biomes": [
+        "lush",
+        "swamp",
+        "ocean"
+      ],
+      "size": [
+        0.64,
+        0.54,
+        0.61
+      ],
+      "base_y": -0.0,
+      "collider": {
+        "shape": "none"
+      },
+      "tris": 144,
+      "tintable": [
+        "blade"
+      ],
+      "nodes": {
+        "mesh": [
+          "grass_tuft_a_mesh"
+        ]
+      },
+      "notes": "Origin at ground centre. Two-sided grass blades (18 arching blades: 9 tall + 9 short, 3 tone materials blade / blade_mid / blade_tip from dark base to light tip), ~0.6 m. Intended for MultiMesh scattering; tint via 'blade' materials."
+    },
+    {
+      "id": "exotic_fan_plant_a",
+      "file": "exotic_fan_plant_a.glb",
+      "kind": "flora",
+      "biomes": [
+        "exotic"
+      ],
+      "size": [
+        5.23,
+        5.63,
+        5.37
+      ],
+      "base_y": 0.004,
+      "collider": {
+        "shape": "cylinder",
+        "radius": 0.6,
+        "height": 3.0,
+        "offset_y": 0.0
+      },
+      "tris": 3641,
+      "tintable": [
+        "leaf",
+        "edge"
+      ],
+      "nodes": {
+        "mesh": [
+          "exotic_fan_plant_a_mesh"
+        ]
+      },
+      "notes": "Origin at the bulb base. 10 giant accordion-folded fan leaves (flat shaded, two-sided) on purple petioles; teal/blue stripes with emissive magenta rim (edge), glowing orange bloom spike (glow, emissive 4.0) poking ~0.4 m above the leaf crown. Leaf crown ~5.4 m, total ~5.6 m tall, ~5.3 m wide."
+    }
+  ]
+}

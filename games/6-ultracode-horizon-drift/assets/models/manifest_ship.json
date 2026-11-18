@@ -1,0 +1,416 @@
+{
+  "group": "ship",
+  "models": [
+    {
+      "id": "ship_player",
+      "file": "ship_player.glb",
+      "kind": "ship",
+      "biomes": [
+        "any"
+      ],
+      "size": [
+        11.56,
+        4.38,
+        13.12
+      ],
+      "base_y": -1.9,
+      "collider": {
+        "shape": "box",
+        "size": [
+          11.2,
+          2.0,
+          12.8
+        ],
+        "offset_y": -0.15
+      },
+      "tris": 16992,
+      "tintable": [
+        "accent"
+      ],
+      "nodes": {
+        "root": "Ship",
+        "hull": "Hull",
+        "canopy": "Canopy",
+        "cockpit": "CockpitInterior",
+        "engines": [
+          "Engine_L",
+          "Engine_R"
+        ],
+        "engine_glow": [
+          "EngineGlow_L",
+          "EngineGlow_R"
+        ],
+        "nav_lights": [
+          "NavLight_L",
+          "NavLight_R",
+          "NavLight_Tail"
+        ],
+        "gear": [
+          "Gear_Front",
+          "Gear_L",
+          "Gear_R"
+        ],
+        "ramp": [
+          "RampDoor"
+        ],
+        "anchors": [
+          "Anchor_ChaseCam",
+          "Anchor_Cockpit",
+          "Anchor_Exit",
+          "Anchor_GearContact_Front",
+          "Anchor_GearContact_L",
+          "Anchor_GearContact_R",
+          "Anchor_Engine_L",
+          "Anchor_Engine_R"
+        ]
+      },
+      "notes": "Wanderer hero ship, nose along Godot -Z (Blender +Y), origin = centre of mass, 1 unit = 1 m. Scene root = importer node named after the file, its only child is `Ship` (empty at the origin); every other node is a flat child of `Ship`. AABB excludes the engine glow cones (size above = hull + gear incl. deployed gear; base_y = lowest foot pad). ENGINE GLOW: EngineGlow_L/R origin = centre of the nozzle exit plane; the node is rotated (-90 deg about Blender X) so that its LOCAL -Y axis points to the rear of the ship; the cone mesh runs along local -Y (length 2.8 m, radius 0.6 m at the nozzle). Scale the node's local Y (scale.y, 0..1.2) for thrust; x/z scale = flame width. Two surfaces: surface0 translucent outer (alpha 0.45), surface1 hot inner core. GEAR (exported deployed, hinge point = node origin): Gear_Front retracts by rotating about local X by -90 deg (rotation.x = -PI/2, folds aft into the belly); Gear_L rotates about local Z by +90 deg, Gear_R about local Z by -90 deg (rotation.z = +/-PI/2; both fold inward into the engine nacelles / wing roots) [deviation from the spec text: side gear uses local Z (= Blender Y, longitudinal) instead of local Y, a vertical axis cannot lift a foot]. Fully retracted nothing sticks out of the hull. Foot contact points: Anchor_GearContact_* at y=-1.90 (deployed). RAMP: RampDoor is the left (-X) boarding hatch, hinge = bottom edge of the hatch (origin (-1.51,-0.55,-1.36)); open it by rotating about local Z by +90 deg (rotation.z = +PI/2): it swings out/down into a horizontal ramp pointing to -X. CANOPY: translucent blue glass (alpha 0.35, BLEND) over `CockpitInterior` (seat, sticks, dash with emissive screens); the glass is single sided so the cockpit camera sees through it. ANCHORS (Godot coords, relative to Ship): Anchor_ChaseCam (0,4.5,16), Anchor_Cockpit (0,1.15,-2.75) eye point looking along -Z, Anchor_Exit (-3.3,-1.9,-1.36) ground point beside the left door, Anchor_Engine_L/R (+-1.95,0.02,6.8) emitter points 0.35 m behind the nozzles, Anchor_GearContact_Front (0,-1.9,-3.51), _L (-3.3,-1.9,2.3), _R (3.3,-1.9,2.3). NavLight_L (red, port/-X wingtip), NavLight_R (green), NavLight_Tail (white): small emissive spheres, blink by toggling visibility / material emission. Hull has 6 material slots: ship_player_hull (warm white), _dark (graphite underside), _accent (orange), _metal, _glow (cyan strips/engine core), _trim (grey). Tintable: swap ship_player_accent for another colour.",
+      "aabb_min": [
+        -5.78,
+        -1.9,
+        -6.65
+      ],
+      "aabb_max": [
+        5.78,
+        2.48,
+        6.47
+      ],
+      "materials": [
+        "ship_player_accent",
+        "ship_player_dark",
+        "ship_player_flame_inner",
+        "ship_player_flame_outer",
+        "ship_player_glass",
+        "ship_player_glow",
+        "ship_player_hull",
+        "ship_player_metal",
+        "ship_player_nav_green",
+        "ship_player_nav_red",
+        "ship_player_nav_white",
+        "ship_player_screen_amber",
+        "ship_player_screen_cyan",
+        "ship_player_seat",
+        "ship_player_seat_accent",
+        "ship_player_trim"
+      ]
+    },
+    {
+      "id": "ship_freighter",
+      "file": "ship_freighter.glb",
+      "kind": "space",
+      "biomes": [
+        "any"
+      ],
+      "size": [
+        40.52,
+        49.25,
+        148.65
+      ],
+      "base_y": -8.05,
+      "collider": {
+        "shape": "box",
+        "size": [
+          40.0,
+          40.0,
+          142.0
+        ],
+        "offset_y": 11.0
+      },
+      "tris": 16574,
+      "tintable": [
+        "cont_"
+      ],
+      "nodes": {
+        "root": "Freighter",
+        "engine_glow": [
+          "EngineGlow_0",
+          "EngineGlow_1",
+          "EngineGlow_2",
+          "EngineGlow_3",
+          "EngineGlow_4"
+        ],
+        "nav_lights": [
+          "NavLight_L",
+          "NavLight_R",
+          "NavLight_Tail"
+        ],
+        "blink": [
+          "BlinkLight",
+          "BlinkLight_2"
+        ]
+      },
+      "notes": "Decorative capital cargo ship ~148 m long (size[2]; nose along Godot -Z, origin mid-ship; bridge tower at the rear). Root `Freighter`; children Hull, Containers (6 colour slots), Engines, EngineGlow_0..4 (same convention as the Wanderer: origin = nozzle exit plane, node rotated so LOCAL -Y points astern, mesh runs along local -Y, scale.y = flame length, base length 24 m x scale (centre engine r=3.3 m, the four outer ones 0.66x)), NavLight_L/R/Tail, BlinkLight and BlinkLight_2 (red beacons on the masts). AABB excludes the glow cones. Windows are emissive (ship_freighter_window).",
+      "aabb_min": [
+        -20.26,
+        -8.05,
+        -71.0
+      ],
+      "aabb_max": [
+        20.26,
+        41.2,
+        77.65
+      ],
+      "materials": [
+        "ship_freighter_accent",
+        "ship_freighter_cont_blue",
+        "ship_freighter_cont_green",
+        "ship_freighter_cont_mustard",
+        "ship_freighter_cont_red",
+        "ship_freighter_cont_teal",
+        "ship_freighter_cont_white",
+        "ship_freighter_dark",
+        "ship_freighter_flame_inner",
+        "ship_freighter_flame_outer",
+        "ship_freighter_glow",
+        "ship_freighter_hull",
+        "ship_freighter_nav_green",
+        "ship_freighter_nav_red",
+        "ship_freighter_nav_white",
+        "ship_freighter_trim",
+        "ship_freighter_window"
+      ]
+    },
+    {
+      "id": "station_orbital",
+      "file": "station_orbital.glb",
+      "kind": "space",
+      "biomes": [
+        "any"
+      ],
+      "size": [
+        237.28,
+        224.92,
+        125.75
+      ],
+      "base_y": -111.67,
+      "collider": {
+        "shape": "none"
+      },
+      "tris": 13612,
+      "nodes": {
+        "root": "Station",
+        "spin": "Ring",
+        "static": [
+          "Hub",
+          "SolarPanels"
+        ],
+        "anchors": [
+          "Anchor_Dock"
+        ],
+        "blink": [
+          "BlinkLight"
+        ],
+        "nav_lights": [
+          "NavLight_L",
+          "NavLight_R"
+        ]
+      },
+      "notes": "Orbital station ~217 m across. Root `Station`; children Hub (stationary: body, docking arms, antennas), Ring (habitat wheel + 6 spokes, origin = hub centre), SolarPanels, NavLight_L/R, BlinkLight, Anchor_Dock. STATION AXIS = Blender Y = Godot Z (the docking bay at the front tip faces Godot -Z). SPIN `Ring` about its LOCAL Z axis in Godot (rotate_object_local(Vector3.BACK, angle)); about 0.01-0.03 rad/s looks right. Anchor_Dock = centre of the front docking port (0,0,-63) looking out along -Z. Windows are emissive (station_orbital_window), ring windows are on the +-Z faces and outer face.",
+      "aabb_min": [
+        -118.64,
+        -111.67,
+        -61.55
+      ],
+      "aabb_max": [
+        118.64,
+        113.25,
+        64.2
+      ],
+      "materials": [
+        "station_orbital_accent",
+        "station_orbital_dark",
+        "station_orbital_glow",
+        "station_orbital_hull",
+        "station_orbital_nav_green",
+        "station_orbital_nav_red",
+        "station_orbital_nav_white",
+        "station_orbital_solar",
+        "station_orbital_trim",
+        "station_orbital_window"
+      ]
+    },
+    {
+      "id": "satellite_a",
+      "file": "satellite_a.glb",
+      "kind": "space",
+      "biomes": [
+        "any"
+      ],
+      "size": [
+        7.0,
+        3.33,
+        2.75
+      ],
+      "base_y": -0.78,
+      "collider": {
+        "shape": "box",
+        "size": [
+          7.0,
+          3.4,
+          2.8
+        ],
+        "offset_y": 0.9
+      },
+      "tris": 2912,
+      "nodes": {
+        "root": "Satellite",
+        "blink": [
+          "BlinkLight"
+        ]
+      },
+      "notes": "Small comms satellite ~7 m span, origin at the centre of the bus. Root `Satellite`; children Body (gold-foil bus, dish pointing toward -Z/+Y, antennas), SolarPanels (spin/tilt if wanted), BlinkLight (red emissive sphere on a mast, origin at the sphere centre; toggle visibility to blink).",
+      "aabb_min": [
+        -3.5,
+        -0.78,
+        -1.5
+      ],
+      "aabb_max": [
+        3.5,
+        2.55,
+        1.25
+      ],
+      "materials": [
+        "satellite_a_accent",
+        "satellite_a_blink",
+        "satellite_a_dark",
+        "satellite_a_foil",
+        "satellite_a_glow",
+        "satellite_a_hull",
+        "satellite_a_solar",
+        "satellite_a_trim"
+      ]
+    },
+    {
+      "id": "asteroid_a",
+      "file": "asteroid_a.glb",
+      "kind": "space",
+      "biomes": [
+        "any"
+      ],
+      "size": [
+        75.64,
+        48.42,
+        49.99
+      ],
+      "base_y": -24.9,
+      "collider": {
+        "shape": "sphere",
+        "radius": 23.2,
+        "offset_y": 0.0
+      },
+      "tris": 2384,
+      "tintable": [
+        "rock"
+      ],
+      "nodes": {
+        "root": "Asteroid_Root",
+        "mesh": "Asteroid"
+      },
+      "notes": "Asteroid fragment (lumpy elongated potato, 8 craters), flat shaded low-poly, origin at the centre (centre of mass; the AABB centre is up to ~3 m off it). Root `Asteroid_Root` > `Asteroid` (4 materials: asteroid_rock_dark / asteroid_rock_mid / asteroid_rock_light = three-tone rock patches, all tintable via 'rock'; asteroid_ore = raised metallic ore veins with pinched ends).",
+      "aabb_min": [
+        -38.88,
+        -24.9,
+        -25.03
+      ],
+      "aabb_max": [
+        36.76,
+        23.53,
+        24.96
+      ],
+      "materials": [
+        "asteroid_ore",
+        "asteroid_rock_dark",
+        "asteroid_rock_light",
+        "asteroid_rock_mid"
+      ]
+    },
+    {
+      "id": "asteroid_b",
+      "file": "asteroid_b.glb",
+      "kind": "space",
+      "biomes": [
+        "any"
+      ],
+      "size": [
+        53.3,
+        59.21,
+        47.14
+      ],
+      "base_y": -30.28,
+      "collider": {
+        "shape": "sphere",
+        "radius": 21.3,
+        "offset_y": 0.0
+      },
+      "tris": 2332,
+      "tintable": [
+        "rock"
+      ],
+      "nodes": {
+        "root": "Asteroid_Root",
+        "mesh": "Asteroid"
+      },
+      "notes": "Asteroid fragment (angular plane-cut fragment), flat shaded low-poly, origin at the centre (centre of mass; the AABB centre is up to ~3 m off it). Root `Asteroid_Root` > `Asteroid` (4 materials: asteroid_rock_dark / asteroid_rock_mid / asteroid_rock_light = three-tone rock patches, all tintable via 'rock'; asteroid_ore = raised metallic ore veins with pinched ends).",
+      "aabb_min": [
+        -29.65,
+        -30.28,
+        -23.49
+      ],
+      "aabb_max": [
+        23.65,
+        28.92,
+        23.65
+      ],
+      "materials": [
+        "asteroid_ore",
+        "asteroid_rock_dark",
+        "asteroid_rock_light",
+        "asteroid_rock_mid"
+      ]
+    },
+    {
+      "id": "asteroid_c",
+      "file": "asteroid_c.glb",
+      "kind": "space",
+      "biomes": [
+        "any"
+      ],
+      "size": [
+        84.93,
+        35.8,
+        41.63
+      ],
+      "base_y": -16.15,
+      "collider": {
+        "shape": "sphere",
+        "radius": 21.6,
+        "offset_y": 0.0
+      },
+      "tris": 2384,
+      "tintable": [
+        "rock"
+      ],
+      "nodes": {
+        "root": "Asteroid_Root",
+        "mesh": "Asteroid"
+      },
+      "notes": "Asteroid fragment (bilobed contact-binary with a large crater), flat shaded low-poly, origin at the centre (centre of mass; the AABB centre is up to ~3 m off it). Root `Asteroid_Root` > `Asteroid` (4 materials: asteroid_rock_dark / asteroid_rock_mid / asteroid_rock_light = three-tone rock patches, all tintable via 'rock'; asteroid_ore = raised metallic ore veins with pinched ends).",
+      "aabb_min": [
+        -42.29,
+        -16.15,
+        -21.47
+      ],
+      "aabb_max": [
+        42.65,
+        19.65,
+        20.15
+      ],
+      "materials": [
+        "asteroid_ore",
+        "asteroid_rock_dark",
+        "asteroid_rock_light",
+        "asteroid_rock_mid"
+      ]
+    }
+  ]
+}

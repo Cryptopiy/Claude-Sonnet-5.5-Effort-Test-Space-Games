@@ -1,0 +1,38 @@
+{
+  "m1_terrain": {
+    "desc": "Spherical planets: cube-sphere quadtree terrain LOD, height functions per biome, terrain shader, collision patch, water-level logic, Planet node API",
+    "owned": ["world/planet/**", "shaders/terrain*", "tests/terrain_*"]
+  },
+  "m2_sky": {
+    "desc": "Sky, stars, galaxy backdrop, sun light, day/night, atmosphere post-process, clouds, ocean surface, star visual (corona/flare), gas giants + rings",
+    "owned": ["world/sky/**", "world/star/**", "world/atmosphere/**", "world/gas_giant.gd", "shaders/sky*", "shaders/atmosphere*", "shaders/star*", "shaders/ocean*", "shaders/cloud*", "shaders/gas*", "shaders/ring*", "tests/sky_*"]
+  },
+  "m3_ship": {
+    "desc": "Player ship: flight model, pulse drive, landing/take-off, atmospheric entry, cameras, VFX",
+    "owned": ["ship/**", "shaders/ship*", "shaders/entry*", "tests/ship_*"]
+  },
+  "m4_player": {
+    "desc": "On-foot player: spherical-gravity character controller, jetpack, mining beam, scanner, vitals/hazards, first/third person, interaction",
+    "owned": ["player/**", "shaders/player*", "tests/player_*"]
+  },
+  "m5_blackhole": {
+    "desc": "Black hole visuals (lensing, accretion disc) + mechanics, warp/hyperspace effect, transition into the destination system",
+    "owned": ["world/blackhole/**", "core/blackhole_params.gd", "shaders/blackhole*", "shaders/warp*", "tests/bh_*"]
+  },
+  "m6_ui": {
+    "desc": "Main menu, HUD, pause menu, controls overview, galaxy map, system map, inventory, notifications",
+    "owned": ["ui/**", "shaders/ui*", "tests/ui_*"]
+  },
+  "m7a_content": {
+    "desc": "Flora/rock/resource scattering, POIs and structures, interactables, prop tables, resource nodes",
+    "owned": ["world/content/scatter_manager.gd", "world/content/poi_sites.gd", "world/content/scatter/**", "world/content/structures/**", "shaders/scatter*", "tests/content_*"]
+  },
+  "m7b_life": {
+    "desc": "Fauna, weather particle effects, system extras (station, freighter, satellites, asteroid fields)",
+    "owned": ["world/content/weather_fx.gd", "world/content/fauna_manager.gd", "world/content/system_extras.gd", "world/content/weather/**", "world/content/fauna/**", "world/content/extras/**", "shaders/weather*", "shaders/fauna*", "tests/life_*"]
+  },
+  "m8_audio": {
+    "desc": "Procedural audio: engine, pulse, wind/ambience by biome, footsteps, UI sounds, warnings (AudioStreamWAV/Generator created in code)",
+    "owned": ["audio/**", "tests/audio_*"]
+  }
+}

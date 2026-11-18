@@ -1,0 +1,310 @@
+{
+  "group": "astro",
+  "models": [
+    {
+      "id": "astronaut",
+      "file": "astronaut.glb",
+      "kind": "character",
+      "biomes": [
+        "any"
+      ],
+      "size": [
+        0.79,
+        1.809,
+        0.586
+      ],
+      "base_y": -0.002,
+      "collider": {
+        "shape": "cylinder",
+        "radius": 0.3,
+        "height": 1.8,
+        "offset_y": 0.0,
+        "center_y": 0.9
+      },
+      "tris": 10656,
+      "tintable": [
+        "accent"
+      ],
+      "nodes": {
+        "root": [
+          "Astronaut"
+        ],
+        "hierarchy": [
+          "Hips",
+          "Torso",
+          "Head",
+          "Visor",
+          "Arm_L",
+          "Arm_R",
+          "Forearm_L",
+          "Forearm_R",
+          "Jetpack",
+          "JetFlame_L",
+          "JetFlame_R",
+          "Leg_L",
+          "Leg_R",
+          "Shin_L",
+          "Shin_R"
+        ],
+        "anchors": [
+          "Anchor_Eye",
+          "Anchor_Hand_R",
+          "Anchor_Hand_L"
+        ]
+      },
+      "notes": "1.8 m exosuit explorer, origin between the feet, faces Godot -Z. Every limb node origin = its joint (Hips at pelvis, Torso at waist, Head at neck, Arm_* at shoulder, Forearm_* at elbow, Leg_* at hip, Shin_* at knee). Rotate about local X for walk swing (rotation.x > 0 swings a hanging limb's far end FORWARD, toward -Z). JetFlame_* origin at the nozzle exit, cone points down (-Y); scale Y to animate. Materials: astronaut_suit/dark/accent(orange team colour, tintable)/glow/visor/gold/flame. Rest pose: relaxed, forearms bent forward ~45 deg."
+    },
+    {
+      "id": "multitool",
+      "file": "multitool.glb",
+      "kind": "tool",
+      "biomes": [
+        "any"
+      ],
+      "size": [
+        0.184,
+        0.285,
+        0.602
+      ],
+      "base_y": -0.144,
+      "collider": {
+        "shape": "none"
+      },
+      "tris": 1812,
+      "tintable": [
+        "accent",
+        "glow"
+      ],
+      "nodes": {
+        "root": [
+          "Multitool"
+        ],
+        "anchors": [
+          "Muzzle"
+        ]
+      },
+      "notes": "Hand-held multitool ~0.57 m. Origin at the grip (centre of the handle), barrel along Blender +Y (Godot -Z). Empty 'Muzzle' at the barrel tip (emissive cyan lens). Materials multitool_body/dark/accent(orange)/glow(cyan emissive)."
+    },
+    {
+      "id": "fp_viewmodel",
+      "file": "fp_viewmodel.glb",
+      "kind": "tool",
+      "biomes": [
+        "any"
+      ],
+      "size": [
+        0.909,
+        0.724,
+        1.113
+      ],
+      "base_y": -0.702,
+      "collider": {
+        "shape": "none"
+      },
+      "tris": 3442,
+      "tintable": [
+        "accent",
+        "glow"
+      ],
+      "nodes": {
+        "objects": [
+          "FP_Arms",
+          "FP_Tool"
+        ],
+        "anchors": [
+          "Muzzle"
+        ]
+      },
+      "notes": "First-person view model built for a camera at the origin looking along Godot -Z (Blender +Y), ~75 deg vertical FOV. FP_Arms = both gloved forearms (white sleeves, dark gloves, cyan wrist screen on the left), FP_Tool = multitool whose origin is the right-hand grip at ~(0.205, -0.225, -0.40) in Godot axes (x right, y up, z forward=-Z), slightly yawed/pitched inward. Muzzle empty (child of FP_Tool) at the barrel tip. Both objects are top-level siblings: parent the whole scene to the camera. Materials fp_viewmodel_body/dark/accent/glow."
+    },
+    {
+      "id": "creature_quadruped_a",
+      "file": "creature_quadruped_a.glb",
+      "kind": "creature",
+      "biomes": [
+        "lush",
+        "swamp",
+        "exotic",
+        "any"
+      ],
+      "size": [
+        0.95,
+        1.626,
+        2.592
+      ],
+      "base_y": -0.005,
+      "collider": {
+        "shape": "box",
+        "size": [
+          0.85,
+          1.4,
+          2.4
+        ],
+        "offset_y": 0.0,
+        "center_y": 0.7
+      },
+      "tris": 1990,
+      "tintable": [
+        "skin",
+        "glow"
+      ],
+      "nodes": {
+        "body": [
+          "Body"
+        ],
+        "head": [
+          "Head"
+        ],
+        "tail": [
+          "Tail"
+        ],
+        "legs": [
+          "Leg_FL",
+          "Leg_FR",
+          "Leg_BL",
+          "Leg_BR"
+        ]
+      },
+      "notes": "Chunky teal/pink bioluminescent grazer, ~2.4 m long. Flat hierarchy: all nodes are top-level siblings under the scene root. Origin = ground contact below the body centre. Body origin at body centre (0, 0.88, 0); Head pivot at the neck (0, 0.99, -0.62 Godot); Tail pivot at the rump; Leg_* pivots at the hips (y=0.80/0.83). Rotate legs about local X for walking (diagonal pairs FL+BR / FR+BL). Materials: _skin (tintable), _belly, _horn, _glow (emissive pink accent, tintable)."
+    },
+    {
+      "id": "creature_floater_a",
+      "file": "creature_floater_a.glb",
+      "kind": "creature",
+      "biomes": [
+        "exotic",
+        "ocean",
+        "toxic",
+        "swamp",
+        "any"
+      ],
+      "size": [
+        1.595,
+        2.752,
+        1.647
+      ],
+      "base_y": -2.212,
+      "collider": {
+        "shape": "sphere",
+        "radius": 0.7,
+        "offset_y": -0.7,
+        "center_y": 0.0
+      },
+      "tris": 2378,
+      "tintable": [
+        "bell",
+        "tentacle",
+        "glow"
+      ],
+      "nodes": {
+        "body": [
+          "Body"
+        ],
+        "tentacles": [
+          "Tentacle_1",
+          "Tentacle_2",
+          "Tentacle_3",
+          "Tentacle_4",
+          "Tentacle_5",
+          "Tentacle_6"
+        ]
+      },
+      "notes": "Floating bioluminescent jellyfish. Origin = centre of the bell (hover it ~2-4 m above ground). Body = translucent bell (alpha, double-sided) + magenta glow core/rim/canals + 3 oral arms; scale Body in Y/XZ for a pulse. Tentacle_1..6 are top-level siblings with the pivot under the bell rim (r=0.44 m, y=-0.23), rest pose hanging down ~1.6-1.9 m: rotate about local X/Z to sway. Materials: _bell (alpha 0.34), _tentacle (alpha 0.8, purple, tentacle tubes + frilly skirt + oral arms), _glow (emissive, tintable)."
+    },
+    {
+      "id": "creature_flyer_a",
+      "file": "creature_flyer_a.glb",
+      "kind": "creature",
+      "biomes": [
+        "lush",
+        "desert",
+        "any",
+        "frozen"
+      ],
+      "size": [
+        2.608,
+        0.967,
+        2.614
+      ],
+      "base_y": 0.008,
+      "collider": {
+        "shape": "sphere",
+        "radius": 0.55,
+        "offset_y": 0.05,
+        "center_y": 0.6
+      },
+      "tris": 1796,
+      "tintable": [
+        "skin",
+        "membrane",
+        "glow"
+      ],
+      "nodes": {
+        "body": [
+          "Body"
+        ],
+        "head": [
+          "Head"
+        ],
+        "tail": [
+          "Tail"
+        ],
+        "wings": [
+          "Wing_L",
+          "Wing_R"
+        ]
+      },
+      "notes": "Winged flyer, ~2.5 m wingspan, ruby body / orange membrane wings with glowing cyan veins. Flat hierarchy (all top-level siblings). Origin = ground contact below the body centre (the dangling talons touch y=0 when perched; Body pivot at y=0.55). Wing_L/Wing_R pivots at the shoulders (x=+-0.16, y=0.64, z=-0.05 in Godot), exported SPREAD horizontally (slightly raised): flap by rotating about the local forward axis (Godot Z); Wing_R rotation.z>0 raises its tip, Wing_L needs the opposite sign (mirror). Head pivot at the neck, Tail pivot at the tail root (swing about Y/X). Membrane material is double-sided. Materials: _skin, _belly (beak/belly), _membrane, _bone, _glow (emissive)."
+    },
+    {
+      "id": "creature_crawler_a",
+      "file": "creature_crawler_a.glb",
+      "kind": "creature",
+      "biomes": [
+        "desert",
+        "volcanic",
+        "barren",
+        "toxic",
+        "any"
+      ],
+      "size": [
+        1.237,
+        0.663,
+        1.357
+      ],
+      "base_y": -0.003,
+      "collider": {
+        "shape": "box",
+        "size": [
+          1.3,
+          0.55,
+          1.2
+        ],
+        "offset_y": 0.025,
+        "center_y": 0.3
+      },
+      "tris": 1802,
+      "tintable": [
+        "shell",
+        "glow"
+      ],
+      "nodes": {
+        "body": [
+          "Body"
+        ],
+        "head": [
+          "Head"
+        ],
+        "legs": [
+          "Leg_1",
+          "Leg_2",
+          "Leg_3",
+          "Leg_4",
+          "Leg_5",
+          "Leg_6"
+        ]
+      },
+      "notes": "~0.8 m armoured beetle: amber shell, dark legs, lime glowing stripes/eyes/knees. Flat hierarchy (all top-level siblings). Origin = ground contact below the body centre (Body pivot y=0.28). Leg pivots at the body attachment (x=+-0.2, y=0.27); leg numbering for a tripod gait (i%2 groups): 1=LF 2=RF 3=RM 4=LM 5=LB 6=RB (L=-X, R=+X; in Godot front=-Z). Rotate legs about local X for stepping (and Z to lift). Head pivot at the neck. Materials: _shell (tintable), _plate, _dark, _glow (emissive lime, tintable)."
+    }
+  ]
+}

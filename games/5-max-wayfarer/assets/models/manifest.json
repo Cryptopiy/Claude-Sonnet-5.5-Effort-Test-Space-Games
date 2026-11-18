@@ -1,0 +1,2636 @@
+{
+ "ship_explorer": {
+  "file": "ship_explorer.glb",
+  "category": "ship",
+  "tris": 28150,
+  "size": [
+   12.882,
+   6.17,
+   14.22
+  ],
+  "min": [
+   -6.441,
+   -3.0,
+   -7.0
+  ],
+  "max": [
+   6.441,
+   3.17,
+   7.22
+  ],
+  "nodes": [
+   "Hull",
+   "Cockpit_Glass",
+   "Cockpit_Interior",
+   "Engine_L",
+   "Engine_Glow_L",
+   "Engine_R",
+   "Engine_Glow_R",
+   "Gear_Front",
+   "Gear_RearL",
+   "Gear_RearR",
+   "Light_Nav_L",
+   "Light_Nav_R",
+   "Light_Beacon",
+   "Marker_Eye.001",
+   "Marker_EngineL",
+   "Marker_EngineR",
+   "Marker_Exit",
+   "Marker_FootFront",
+   "Marker_FootRearL",
+   "Marker_FootRearR",
+   "Marker_Headlight_L",
+   "Marker_Headlight_R",
+   "Marker_Hatch"
+  ],
+  "materials": [
+   "Hull_Paint",
+   "Hull_Dark",
+   "Hull_Accent",
+   "Emissive_Light",
+   "Metal",
+   "Emissive_Window",
+   "Emissive_Amber",
+   "Emissive_NavRed",
+   "Emissive_NavGreen",
+   "Rubber",
+   "Glass",
+   "Emissive_Screen",
+   "Emissive_ScreenAmber",
+   "Emissive_Engine",
+   "Emissive_Beacon"
+  ],
+  "collision": {
+   "shape": "box",
+   "size": [
+    3.9,
+    3.4,
+    14.0
+   ],
+   "offset": [
+    0,
+    0.3,
+    0
+   ]
+  },
+  "notes": "Nose points to -Z in Godot. Hull = root mesh, every other node is its descendant. GEAR: Gear_Front, Gear_RearL, Gear_RearR have their origin exactly on the hinge, rotation 0, legs hang straight down (extended). To RETRACT rotate each of the three nodes about its local X axis by -90 degrees (Godot rotation.x = -PI/2; feet swing to +Z = tail and up); the legs then disappear completely inside the hull / engine pods. Marker_FootFront/RearL/RearR = bottom centre of the foot pads (ground contact, all at y=-3.0 in model space). Hull origin = centre of the ship; belly is 1.6 m above the ground with the gear extended. Cockpit_Interior is its own node (hide it for first person if desired); Cockpit_Glass uses the Glass material (alpha 0.25, double sided). Marker_Eye = pilot eye (inside canopy, 0.65 m above the seat). Engine_L/Engine_R = engine pods, each with child Engine_Glow_L/R (material Emissive_Engine, origin = centre of the nozzle exit plane; scale/hide it to modulate thrust). Marker_EngineL/R = nozzle exit centre (exhaust flows towards +Z). Marker_Exit = point on the ground plane 3 m to the left of the side hatch (Marker_Hatch, left side, -X). Marker_Headlight_L/R at the nose. Light_Nav_L (red, left/-X), Light_Nav_R (green, right/+X), Light_Beacon (amber, on the fin). Materials: Hull_Paint, Hull_Accent, Hull_Dark, Metal, Rubber, Glass, Emissive_Engine, Emissive_Light, Emissive_Amber, Emissive_Screen, Emissive_ScreenAmber, Emissive_NavRed, Emissive_NavGreen, Emissive_Window, Emissive_Beacon. Wingspan 12.9 m, length 14.0 m."
+ },
+ "astronaut": {
+  "file": "astronaut.glb",
+  "category": "character",
+  "tris": 20848,
+  "size": [
+   1.048,
+   1.8,
+   0.598
+  ],
+  "min": [
+   -0.525,
+   0.0,
+   -0.246
+  ],
+  "max": [
+   0.524,
+   1.8,
+   0.352
+  ],
+  "nodes": [
+   "Pelvis",
+   "Torso",
+   "Head",
+   "Visor",
+   "Backpack",
+   "Arm_L_Upper",
+   "Arm_L_Lower",
+   "Hand_L",
+   "Leg_L_Upper",
+   "Leg_L_Lower",
+   "Foot_L",
+   "Arm_R_Upper",
+   "Arm_R_Lower",
+   "Hand_R",
+   "Leg_R_Upper",
+   "Leg_R_Lower",
+   "Foot_R",
+   "Chest_Light",
+   "Marker_Eye",
+   "Marker_JetL",
+   "Marker_JetR",
+   "Marker_Tool"
+  ],
+  "materials": [
+   "Suit_White",
+   "Suit_Dark",
+   "Metal",
+   "Suit_Accent",
+   "Emissive_Light",
+   "Visor",
+   "Emissive_Jet"
+  ],
+  "collision": {
+   "shape": "capsule",
+   "radius": 0.35,
+   "height": 1.8,
+   "offset": [
+    0,
+    0.9,
+    0
+   ]
+  },
+  "notes": "Faces -Z in Godot (+Y in Blender). Origin = on the ground between the feet, height 1.8 m, relaxed A-pose (arms ~17 deg out, palms inward, knees straight). Every joint is its own mesh node with its ORIGIN ON THE JOINT, rotation 0 / scale 1, nested as: Pelvis(hip centre) > [Torso(waist) > [Head(neck) > Visor, Arm_L_Upper(shoulder) > Arm_L_Lower(elbow) > Hand_L(wrist), Arm_R_*, Backpack > Marker_JetL/R, Chest_Light, Marker_Eye], Leg_L_Upper(hip) > Leg_L_Lower(knee) > Foot_L(ankle), Leg_R_*]. _L = character's left = -X. Marker_Eye is a child of Torso (does not follow Head rotation). Marker_Tool = right palm. Marker_JetL/R = nozzle exit centres (flame goes along -Y Godot, i.e. down). Godot rotation conventions: rotation.x > 0 swings a limb FORWARD (towards -Z) - use it for the walk cycle on Arm_*_Upper/Leg_*_Upper/Leg_*_Lower; arms out (abduction): Arm_R_Upper rotation.z = +angle, Arm_L_Upper rotation.z = -angle. Limbs overlap with joint balls so no gaps at +-60 deg. Materials: Suit_White, Suit_Accent (orange), Suit_Dark, Metal, Visor (metal 0.9, rough 0.08, amber), Emissive_Light (chest light, helmet lamps), Emissive_Jet (jetpack core + nozzle glow)."
+ },
+ "landing_pad": {
+  "file": "landing_pad.glb",
+  "category": "structure",
+  "tris": 7725,
+  "size": [
+   16.0,
+   3.345,
+   16.0
+  ],
+  "min": [
+   -8.0,
+   -1.2,
+   -8.0
+  ],
+  "max": [
+   8.0,
+   2.145,
+   8.0
+  ],
+  "nodes": [
+   "Body"
+  ],
+  "materials": [
+   "Pad_Plate",
+   "Hazard_Black",
+   "Pad_Side",
+   "Pad_Marking",
+   "Pad_Seam",
+   "Hazard_Yellow",
+   "Metal",
+   "Emissive_Amber",
+   "Emissive_Light",
+   "Hull_Dark",
+   "Hull_Accent"
+  ],
+  "collision": {
+   "shape": "cylinder",
+   "radius": 8.0,
+   "height": 1.2,
+   "offset": [
+    0,
+    -0.6,
+    0
+   ]
+  },
+  "notes": "Round landing pad, diameter 16 m. Origin = pad centre on the top surface (top at y=0 in Godot, body extends down to y=-1.2 so it can sink into sloped ground). Inset ship glyph in the centre (nose towards -Z Godot), diagonal hazard ring (yellow/black), 12 recessed edge lights on the rim chamfer (alternating Emissive_Amber / Emissive_Light = warm white), 3 light pylons on the rim (angles 90/210/330 deg in Blender), service hatch with a step on the +Z (Godot) side. Single mesh node 'Body'. Materials: Pad_Plate, Pad_Side, Pad_Marking, Pad_Seam, Hazard_Yellow, Hazard_Black, Hull_Dark, Hull_Accent, Metal, Emissive_Light, Emissive_Amber."
+ },
+ "outpost_hab": {
+  "file": "outpost_hab.glb",
+  "category": "structure",
+  "tris": 7462,
+  "size": [
+   9.3,
+   7.754,
+   9.92
+  ],
+  "min": [
+   -4.65,
+   -0.8,
+   -5.55
+  ],
+  "max": [
+   4.65,
+   6.954,
+   4.37
+  ],
+  "nodes": [
+   "Body"
+  ],
+  "materials": [
+   "Concrete",
+   "Hull_Dark",
+   "Hull_Accent",
+   "Hull_Paint",
+   "Emissive_Light",
+   "Metal",
+   "Emissive_Window",
+   "Pipe_Steel"
+  ],
+  "collision": {
+   "shape": "box",
+   "size": [
+    9.3,
+    5.5,
+    6.8
+   ],
+   "offset": [
+    0,
+    1.95,
+    -0.4
+   ]
+  },
+  "notes": "Habitat module: capsule dome on a rim base, 8 x 4.9 m footprint (plinth 9.3 x 6 m), dome top 4.4 m, antenna to ~5.2 m. Origin = ground-contact centre; the concrete foundation extends 0.8 m below y=0. The AIRLOCK DOOR FACES +Y in Blender = -Z in Godot (porch with 2 steps in front of it, footprint reaches ~5.6 m towards -Z). Windows use Emissive_Window (warm amber), the airlock frame uses Emissive_Light (mint). Utility pipes, a tank and a generator box are on the +Z (Godot) back side. The collision box covers plinth + dome + airlock only (not the porch/back tank). Single mesh node 'Body'."
+ },
+ "outpost_tower": {
+  "file": "outpost_tower.glb",
+  "category": "structure",
+  "tris": 6732,
+  "size": [
+   8.8,
+   18.93,
+   5.087
+  ],
+  "min": [
+   -2.5,
+   -0.8,
+   -2.3
+  ],
+  "max": [
+   6.3,
+   18.13,
+   2.787
+  ],
+  "nodes": [
+   "Body",
+   "Light_Top"
+  ],
+  "materials": [
+   "Concrete",
+   "Metal",
+   "Hull_Accent",
+   "Hull_Paint",
+   "Hull_Dark",
+   "Emissive_Window",
+   "Emissive_Light"
+  ],
+  "collision": {
+   "shape": "cylinder",
+   "radius": 2.2,
+   "height": 18.3,
+   "offset": [
+    0,
+    9.15,
+    0
+   ]
+  },
+  "notes": "Lattice communications tower, 18 m tall (lamp top at 18.05 m), 3 x 3 m base tapering to 1 m. Origin = tower centre at ground level, foundation 0.8 m below. Child node 'Light_Top' (separate mesh, origin at the lamp centre, material Emissive_Light = RED): blink it by toggling visibility / emission energy. Equipment hut at +X (x=3.9 m) on a shared concrete slab; dish on the +Z (Godot) side, ladder on the -Z side. The collision cylinder only covers the tower base (add a box for the hut yourself if needed: x 2.3..5.5, z -1.4..1.4, height 2.6)."
+ },
+ "outpost_container": {
+  "file": "outpost_container.glb",
+  "category": "structure",
+  "tris": 5808,
+  "size": [
+   6.08,
+   3.55,
+   2.8
+  ],
+  "min": [
+   -3.0,
+   -0.8,
+   -1.4
+  ],
+  "max": [
+   3.08,
+   2.75,
+   1.4
+  ],
+  "nodes": [
+   "Body"
+  ],
+  "materials": [
+   "Concrete",
+   "Container_Frame",
+   "Hull_Dark",
+   "Container_Orange",
+   "Container_OrangeWorn",
+   "Metal",
+   "Hull_Accent",
+   "Container_Mark"
+  ],
+  "collision": {
+   "shape": "box",
+   "size": [
+    6.1,
+    3.55,
+    2.8
+   ],
+   "offset": [
+    0,
+    0.975,
+    0
+   ]
+  },
+  "notes": "Shipping container 6.0 x 2.5 x 2.6 m (orange, weathered: Container_Orange / Container_OrangeWorn). Raised 0.15 m on two concrete sleepers that extend 0.8 m below the origin plane. DOORS face +X (Blender and Godot). Single mesh node 'Body'."
+ },
+ "outpost_container_b": {
+  "file": "outpost_container_b.glb",
+  "category": "structure",
+  "tris": 7756,
+  "size": [
+   9.08,
+   3.55,
+   2.8
+  ],
+  "min": [
+   -4.5,
+   -0.8,
+   -1.4
+  ],
+  "max": [
+   4.58,
+   2.75,
+   1.4
+  ],
+  "nodes": [
+   "Body"
+  ],
+  "materials": [
+   "Concrete",
+   "Container_Frame",
+   "Hull_Dark",
+   "Container_Teal",
+   "Container_White",
+   "Container_TealWorn",
+   "Metal",
+   "Hull_Accent",
+   "Container_Mark"
+  ],
+  "collision": {
+   "shape": "box",
+   "size": [
+    9.1,
+    3.55,
+    2.8
+   ],
+   "offset": [
+    0,
+    0.975,
+    0
+   ]
+  },
+  "notes": "Long (9 m) shipping container, teal body with white roof and white stripe, stencil-like marks (Container_Teal / Container_TealWorn / Container_White / Container_Mark). Three concrete sleepers extend 0.8 m below the origin plane. DOORS face +X. Single mesh node 'Body'."
+ },
+ "outpost_tank": {
+  "file": "outpost_tank.glb",
+  "category": "structure",
+  "tris": 7752,
+  "size": [
+   21.8,
+   8.711,
+   6.488
+  ],
+  "min": [
+   -7.6,
+   -0.85,
+   -3.288
+  ],
+  "max": [
+   14.2,
+   7.861,
+   3.2
+  ],
+  "nodes": [
+   "Body"
+  ],
+  "materials": [
+   "Concrete",
+   "Hull_Dark",
+   "Hull_Accent",
+   "Hull_Paint",
+   "Metal",
+   "Pipe_Steel",
+   "Emissive_Light",
+   "Emissive_Window"
+  ],
+  "collision": {
+   "shape": "box",
+   "size": [
+    21.8,
+    8.71,
+    6.49
+   ],
+   "offset": [
+    3.3,
+    3.51,
+    -0.04
+   ]
+  },
+  "notes": "Tank farm: 3 vertical storage tanks (4 m dia, 6.4 m tall, centres at x=-5/0/+5), overhead catwalk with railings at y=6.75, caged ladder at the +X end of the catwalk, valve manifold along the +Z (Godot) side, pump house at x=+11.8 (door on the -Z side). Origin = centre of the middle tank at ground level; concrete slab extends 0.8 m below. Level gauges use Emissive_Light (mint). Single mesh node 'Body'."
+ },
+ "outpost_solar": {
+  "file": "outpost_solar.glb",
+  "category": "structure",
+  "tris": 6684,
+  "size": [
+   12.06,
+   4.02,
+   5.353
+  ],
+  "min": [
+   -5.26,
+   -0.8,
+   -2.647
+  ],
+  "max": [
+   6.8,
+   3.22,
+   2.706
+  ],
+  "nodes": [
+   "Body"
+  ],
+  "materials": [
+   "Solar_Cell",
+   "Hull_Paint",
+   "Solar_Grid",
+   "Hull_Dark",
+   "Metal",
+   "Concrete",
+   "Hull_Accent",
+   "Emissive_Light",
+   "Emissive_Amber",
+   "Rubber"
+  ],
+  "collision": {
+   "shape": "box",
+   "size": [
+    12.06,
+    4.02,
+    5.35
+   ],
+   "offset": [
+    0.77,
+    1.21,
+    0.03
+   ]
+  },
+  "notes": "Solar field: 8 tilted panels (2 rows x 4, 1.75 x 2.3 m each, tilt 30 deg, facing +Y Blender = -Z Godot) with blue-black Solar_Cell and thin Solar_Grid lines, light frames, stands with concrete footings that extend 0.8 m below y=0, battery box at +X (x=5.6) with Emissive_Light (green) / Emissive_Amber indicators, small weather mast at the -X back corner. Panel field is ~8 x 6 m. Origin = centre of the panel field at ground level. Single mesh node 'Body'."
+ },
+ "beacon_pylon": {
+  "file": "beacon_pylon.glb",
+  "category": "structure",
+  "tris": 1704,
+  "size": [
+   2.66,
+   7.925,
+   2.66
+  ],
+  "min": [
+   -1.33,
+   -0.805,
+   -1.33
+  ],
+  "max": [
+   1.33,
+   7.12,
+   1.33
+  ],
+  "nodes": [
+   "Body"
+  ],
+  "materials": [
+   "Concrete",
+   "Hull_Dark",
+   "Metal",
+   "Emissive_Light",
+   "Hull_Accent",
+   "Hull_Paint",
+   "Glow_Beacon"
+  ],
+  "collision": {
+   "shape": "cylinder",
+   "radius": 0.6,
+   "height": 7.2,
+   "offset": [
+    0,
+    3.6,
+    0
+   ]
+  },
+  "notes": "Beacon pylon ~7.1 m tall: octagonal base plate with Emissive_Light accents, tapered 8-sided column, 3 prongs holding a floating crystal and a ring, both in material Glow_Beacon (white-ish base colour, white emission strength 4: multiply / tint it per planet). Origin = base centre at ground level, concrete foundation extends 0.8 m below. Single mesh node 'Body'."
+ },
+ "monolith": {
+  "file": "monolith.glb",
+  "category": "structure",
+  "tris": 5190,
+  "size": [
+   8.628,
+   7.79,
+   8.745
+  ],
+  "min": [
+   -4.678,
+   -0.8,
+   -4.454
+  ],
+  "max": [
+   3.95,
+   6.99,
+   4.291
+  ],
+  "nodes": [
+   "Body"
+  ],
+  "materials": [
+   "Stone_Dark",
+   "Stone_Mid",
+   "Glow_Rune"
+  ],
+  "collision": {
+   "shape": "box",
+   "size": [
+    2.5,
+    7.45,
+    1.0
+   ],
+   "offset": [
+    0,
+    3.28,
+    0
+   ]
+  },
+  "notes": "Alien monolith, irregular dark stone slab ~2.4 x 0.9 x 7 m (top is cut at a slant), standing in a sunken ring base (outer radius 3.95 m, rim at y=+0.07, pit floor at y=-0.45). Etched glyph lines in material Glow_Rune (white-ish emission, tintable) run up the +Y Blender = -Z Godot face and over the ring rim. Origin = ground-contact centre. Single mesh node 'Body'. Collision box covers the slab only."
+ },
+ "crate_supply": {
+  "file": "crate_supply.glb",
+  "category": "prop",
+  "tris": 2684,
+  "size": [
+   1.525,
+   1.69,
+   1.35
+  ],
+  "min": [
+   -0.763,
+   0.0,
+   -0.675
+  ],
+  "max": [
+   0.763,
+   1.69,
+   0.675
+  ],
+  "nodes": [
+   "Body"
+  ],
+  "materials": [
+   "Rubber",
+   "Hull_Accent",
+   "Hull_Paint",
+   "Hull_Dark",
+   "Metal",
+   "Emissive_Light",
+   "Emissive_Amber"
+  ],
+  "collision": {
+   "shape": "box",
+   "size": [
+    1.25,
+    1.3,
+    1.25
+   ],
+   "offset": [
+    0,
+    0.65,
+    0
+   ]
+  },
+  "notes": "Supply crate / drop pod ~1.2 x 1.3 x 1.2 m (orange body, white lid, dark corner guards, latches, handles). Origin = bottom centre (on four rubber feet). Indicator panel on the +Y Blender = -Z Godot face uses Emissive_Light (green) + Emissive_Amber; amber beacon on the lid. Single mesh node 'Body'."
+ },
+ "wreck_ship": {
+  "file": "wreck_ship.glb",
+  "category": "structure",
+  "tris": 6836,
+  "size": [
+   6.25,
+   4.569,
+   10.277
+  ],
+  "min": [
+   -1.302,
+   0.0,
+   -9.888
+  ],
+  "max": [
+   4.948,
+   4.569,
+   0.389
+  ],
+  "nodes": [
+   "Body"
+  ],
+  "materials": [
+   "Hull_Paint",
+   "Hull_Accent",
+   "Hull_Dark",
+   "Metal",
+   "Rubber",
+   "Emissive_Light"
+  ],
+  "collision": {
+   "shape": "box",
+   "size": [
+    5.65,
+    3.97,
+    9.68
+   ],
+   "offset": [
+    1.82,
+    2.28,
+    -4.75
+   ]
+  },
+  "notes": "Crashed small ship ~10 m long: torn plating exposing ribs and a dark interior, bent/sheared left wing, wing stub + missing engine on the right (exposed ring frames and cables), broken fin and canopy frame, scorched weathered Hull_Paint (this model's Hull_Paint / Hull_Accent are exported in dirty colours) with Hull_Dark soot, glowing embers in Emissive_Light (orange). The ~14 deg nose-up pitch and ~6 deg roll are BAKED into the mesh; the ORIGIN is at the lowest centre point of the hull (everything is above y=0): sink it ~1-1.5 m into the ground to get the half-buried look. Single mesh node 'Body'. Collision box is slightly shrunk."
+ },
+ "tree_lush_a": {
+  "file": "tree_lush_a.glb",
+  "category": "flora",
+  "tris": 2016,
+  "size": [
+   6.897,
+   9.11,
+   6.031
+  ],
+  "min": [
+   -3.227,
+   -0.141,
+   -3.146
+  ],
+  "max": [
+   3.671,
+   8.969,
+   2.885
+  ],
+  "nodes": [
+   "Body"
+  ],
+  "materials": [
+   "Bark",
+   "Foliage_A",
+   "Foliage_B"
+  ],
+  "collision": {
+   "shape": "cylinder",
+   "radius": 0.5,
+   "height": 5.0,
+   "offset": [
+    0,
+    2.5,
+    0
+   ]
+  },
+  "notes": "Broadleaf tree ~9 m tall, crown ~7 m wide: gnarly tapering trunk with flared roots (a few cm below y=0), 4 big branches, 7 lumpy leaf blobs. Materials: Bark (trunk + branches), Foliage_A (light blobs), Foliage_B (darker blobs). Tint contract: Foliage_A / Foliage_B / Foliage_Flower are recoloured by the game (planet foliage tint x value of the base colour; Foliage materials are double sided); Bark is multiplied by the wood tint. Origin = ground contact at the trunk base. Single mesh node 'Body'."
+ },
+ "tree_lush_b": {
+  "file": "tree_lush_b.glb",
+  "category": "flora",
+  "tris": 1801,
+  "size": [
+   6.981,
+   14.42,
+   7.398
+  ],
+  "min": [
+   -2.865,
+   -0.132,
+   -3.867
+  ],
+  "max": [
+   4.117,
+   14.288,
+   3.531
+  ],
+  "nodes": [
+   "Body"
+  ],
+  "materials": [
+   "Bark",
+   "Foliage_A",
+   "Foliage_B"
+  ],
+  "collision": {
+   "shape": "cylinder",
+   "radius": 0.45,
+   "height": 7.0,
+   "offset": [
+    0,
+    3.5,
+    0
+   ]
+  },
+  "notes": "Tall slender broadleaf tree ~14 m, trunk leans ~5 deg towards +X, three layered umbrella canopy tiers (r 3.4 / 2.65 / 1.85 m) with leafy lumps and a top tuft. Materials: Bark, Foliage_A (lower + top tier), Foliage_B (middle tier). Tint contract: Foliage_A / Foliage_B / Foliage_Flower are recoloured by the game (planet foliage tint x value of the base colour; Foliage materials are double sided); Bark is multiplied by the wood tint. Origin = ground contact at the trunk base. Single mesh node 'Body'."
+ },
+ "tree_lush_c": {
+  "file": "tree_lush_c.glb",
+  "category": "flora",
+  "tris": 2100,
+  "size": [
+   10.293,
+   7.557,
+   10.111
+  ],
+  "min": [
+   -5.022,
+   -0.131,
+   -5.171
+  ],
+  "max": [
+   5.271,
+   7.426,
+   4.94
+  ],
+  "nodes": [
+   "Body"
+  ],
+  "materials": [
+   "Bark",
+   "Foliage_A",
+   "Foliage_B",
+   "Foliage_Flower"
+  ],
+  "collision": {
+   "shape": "cylinder",
+   "radius": 0.7,
+   "height": 4.0,
+   "offset": [
+    0,
+    2.0,
+    0
+   ]
+  },
+  "notes": "Alien parasol tree ~7.4 m: thick curved trunk, one big flat canopy (r 5.2 m, scalloped drooping rim, rim height ~4.4 m so you can walk under it), radial ribs under the canopy, 11 hanging vines (Foliage_B) with 6 pods (Foliage_Flower), 9 blossoms on top (Foliage_Flower petals, Foliage_B core). Collision only covers the trunk. Tint contract: Foliage_A / Foliage_B / Foliage_Flower are recoloured by the game (planet foliage tint x value of the base colour; Foliage materials are double sided); Bark is multiplied by the wood tint. Origin = ground contact at the trunk base. Single mesh node 'Body'."
+ },
+ "bush_lush": {
+  "file": "bush_lush.glb",
+  "category": "flora",
+  "tris": 545,
+  "size": [
+   1.948,
+   1.472,
+   1.994
+  ],
+  "min": [
+   -0.947,
+   -0.051,
+   -1.026
+  ],
+  "max": [
+   1.0,
+   1.421,
+   0.968
+  ],
+  "nodes": [
+   "Body"
+  ],
+  "materials": [
+   "Bark",
+   "Foliage_A",
+   "Foliage_B"
+  ],
+  "collision": {
+   "shape": "none"
+  },
+  "notes": "Rounded bush ~1.4 m: 7 lumpy leaf blobs (Foliage_A / Foliage_B) + 3 small twigs (Bark). Tint contract: Foliage_A / Foliage_B / Foliage_Flower are recoloured by the game (planet foliage tint x value of the base colour; Foliage materials are double sided); Bark is multiplied by the wood tint. Origin = ground contact. Single mesh node 'Body'."
+ },
+ "fern": {
+  "file": "fern.glb",
+  "category": "flora",
+  "tris": 431,
+  "size": [
+   2.03,
+   1.178,
+   2.165
+  ],
+  "min": [
+   -1.028,
+   -0.053,
+   -1.168
+  ],
+  "max": [
+   1.002,
+   1.126,
+   0.997
+  ],
+  "nodes": [
+   "Body"
+  ],
+  "materials": [
+   "Foliage_A",
+   "Foliage_B"
+  ],
+  "collision": {
+   "shape": "none"
+  },
+  "notes": "Fern ~1.1 m tall, ~2 m wide: 9 arching pinnate fronds (midrib + serrated leaflets, double sided Foliage_A) from a small Foliage_B base. Tint contract: Foliage_A / Foliage_B / Foliage_Flower are recoloured by the game (planet foliage tint x value of the base colour; Foliage materials are double sided); Bark is multiplied by the wood tint. Origin = ground contact at the centre. Single mesh node 'Body'."
+ },
+ "flower_cluster": {
+  "file": "flower_cluster.glb",
+  "category": "flora",
+  "tris": 360,
+  "size": [
+   0.803,
+   0.739,
+   0.715
+  ],
+  "min": [
+   -0.392,
+   -0.031,
+   -0.295
+  ],
+  "max": [
+   0.411,
+   0.708,
+   0.42
+  ],
+  "nodes": [
+   "Body"
+  ],
+  "materials": [
+   "Foliage_B",
+   "Foliage_Flower",
+   "Foliage_A"
+  ],
+  "collision": {
+   "shape": "none"
+  },
+  "notes": "5 flowers ~0.65 m tall: stems + flower cores (Foliage_B), 8-petal heads (Foliage_Flower), 4 basal leaves (Foliage_A). NOTE: the game applies ONE tint key to all Foliage* materials of a model, so with the biome tint 'flower' the leaves are tinted like the petals (value differences keep them readable: petals brightest, stems darkest). Tint contract: Foliage_A / Foliage_B / Foliage_Flower are recoloured by the game (planet foliage tint x value of the base colour; Foliage materials are double sided); Bark is multiplied by the wood tint. Origin = ground contact. Single mesh node 'Body'."
+ },
+ "grass_tuft": {
+  "file": "grass_tuft.glb",
+  "category": "flora",
+  "tris": 55,
+  "size": [
+   0.996,
+   0.714,
+   1.288
+  ],
+  "min": [
+   -0.479,
+   0.0,
+   -0.629
+  ],
+  "max": [
+   0.517,
+   0.714,
+   0.659
+  ],
+  "nodes": [
+   "Body"
+  ],
+  "materials": [
+   "Foliage_A"
+  ],
+  "collision": {
+   "shape": "none"
+  },
+  "notes": "Grass tuft ~0.7 m: 11 bent pointed blades (5 triangles each, 55 triangles in total), double sided Foliage_A. Tint contract: Foliage_A / Foliage_B / Foliage_Flower are recoloured by the game (planet foliage tint x value of the base colour; Foliage materials are double sided); Bark is multiplied by the wood tint. Origin = ground contact at the centre. Single mesh node 'Body'."
+ },
+ "rock_a": {
+  "file": "rock_a.glb",
+  "category": "rock",
+  "tris": 320,
+  "size": [
+   2.15,
+   1.8,
+   1.95
+  ],
+  "min": [
+   -1.075,
+   -0.08,
+   -0.975
+  ],
+  "max": [
+   1.075,
+   1.72,
+   0.975
+  ],
+  "nodes": [
+   "Body"
+  ],
+  "materials": [
+   "Rock_A",
+   "Rock_B"
+  ],
+  "collision": {
+   "shape": "sphere",
+   "radius": 1.1,
+   "offset": [
+    0,
+    0.85,
+    0
+   ]
+  },
+  "notes": "Rounded low-poly boulder ~2.2 x 1.8 x 2.0 m (flat-shaded, a few flat facets). Rock_A / Rock_B are recoloured by the game with the planet's rock tint (Rock_B is the darker value, used for stained patches). Low-poly flat shading, base sinks ~8 cm below y=0 so it sits in the terrain. Origin = ground contact (bottom centre). Single mesh node 'Body'."
+ },
+ "rock_b": {
+  "file": "rock_b.glb",
+  "category": "rock",
+  "tris": 104,
+  "size": [
+   2.654,
+   1.576,
+   2.411
+  ],
+  "min": [
+   -1.165,
+   -0.08,
+   -0.946
+  ],
+  "max": [
+   1.489,
+   1.496,
+   1.466
+  ],
+  "nodes": [
+   "Body"
+  ],
+  "materials": [
+   "Rock_A",
+   "Rock_B"
+  ],
+  "collision": {
+   "shape": "box",
+   "size": [
+    2.45,
+    1.38,
+    2.21
+   ],
+   "offset": [
+    0.16,
+    0.71,
+    0.26
+   ]
+  },
+  "notes": "Angular leaning slab ~2.6 x 1.5 m (+ a smaller slab leaning on it), chipped edges. Rock_A / Rock_B are recoloured by the game with the planet's rock tint (Rock_B is the darker value, used for stained patches). Low-poly flat shading, base sinks ~8 cm below y=0 so it sits in the terrain. Collision = box around both. Origin = ground contact. Single mesh node 'Body'."
+ },
+ "rock_c": {
+  "file": "rock_c.glb",
+  "category": "rock",
+  "tris": 426,
+  "size": [
+   3.319,
+   1.6,
+   2.92
+  ],
+  "min": [
+   -1.175,
+   -0.08,
+   -1.231
+  ],
+  "max": [
+   2.144,
+   1.52,
+   1.69
+  ],
+  "nodes": [
+   "Body"
+  ],
+  "materials": [
+   "Rock_A",
+   "Rock_B"
+  ],
+  "collision": {
+   "shape": "sphere",
+   "radius": 1.5,
+   "offset": [
+    0.48,
+    0.8,
+    0.23
+   ]
+  },
+  "notes": "Cluster of three stones (big rounded one + two angular ones), ~3.3 m wide, tallest ~1.5 m. Rock_A / Rock_B are recoloured by the game with the planet's rock tint (Rock_B is the darker value, used for stained patches). Low-poly flat shading, base sinks ~8 cm below y=0 so it sits in the terrain. Origin = ground contact near the big stone. Single mesh node 'Body'."
+ },
+ "rock_d": {
+  "file": "rock_d.glb",
+  "category": "rock",
+  "tris": 157,
+  "size": [
+   2.687,
+   3.58,
+   2.265
+  ],
+  "min": [
+   -1.171,
+   -0.14,
+   -1.156
+  ],
+  "max": [
+   1.516,
+   3.44,
+   1.109
+  ],
+  "nodes": [
+   "Body"
+  ],
+  "materials": [
+   "Rock_A",
+   "Rock_B"
+  ],
+  "collision": {
+   "shape": "cylinder",
+   "radius": 0.9,
+   "height": 3.0,
+   "offset": [
+    0,
+    1.5,
+    0
+   ]
+  },
+  "notes": "Tall leaning rock spire ~3.5 m with two small boulders at its foot; faceted, banded Rock_A / Rock_B. Rock_A / Rock_B are recoloured by the game with the planet's rock tint (Rock_B is the darker value, used for stained patches). Low-poly flat shading, base sinks ~8 cm below y=0 so it sits in the terrain. Origin = ground contact at the spire's base centre. Single mesh node 'Body'."
+ },
+ "boulder_big": {
+  "file": "boulder_big.glb",
+  "category": "rock",
+  "tris": 439,
+  "size": [
+   8.844,
+   6.107,
+   7.013
+  ],
+  "min": [
+   -4.145,
+   -0.05,
+   -3.814
+  ],
+  "max": [
+   4.699,
+   6.057,
+   3.2
+  ],
+  "nodes": [
+   "Body"
+  ],
+  "materials": [
+   "Rock_A",
+   "Rock_B"
+  ],
+  "collision": {
+   "shape": "box",
+   "size": [
+    8.34,
+    5.61,
+    6.51
+   ],
+   "offset": [
+    0.28,
+    3.0,
+    -0.31
+   ]
+  },
+  "notes": "Big tiered boulder ~8.8 x 6 x 7 m: three stacked ledge blocks with a flat top plus buttress blocks around the foot (collision = one box around everything). Rock_A / Rock_B are recoloured by the game with the planet's rock tint (Rock_B is the darker value, used for stained patches). Low-poly flat shading, base sinks ~8 cm below y=0 so it sits in the terrain. Origin = ground contact at the centre of the base. Single mesh node 'Body'."
+ },
+ "resource_sodium": {
+  "file": "resource_sodium.glb",
+  "category": "resource",
+  "tris": 237,
+  "size": [
+   1.172,
+   1.37,
+   1.059
+  ],
+  "min": [
+   -0.524,
+   -0.053,
+   -0.552
+  ],
+  "max": [
+   0.648,
+   1.317,
+   0.507
+  ],
+  "nodes": [
+   "Body"
+  ],
+  "materials": [
+   "Rock_B",
+   "Res_Sodium"
+  ],
+  "collision": {
+   "shape": "sphere",
+   "radius": 0.6,
+   "offset": [
+    0,
+    0.55,
+    0
+   ]
+  },
+  "notes": "Sodium node ~1.3 m: 7 hexagonal amber crystals splaying out of a small rubble base. Res_Sodium = amber/orange-yellow emission strength 2.5 (the crystals), base stones use Rock_B (tinted). Fixed colours (Res_* materials are NOT tinted by the game). Origin = ground contact at the bottom centre. Single mesh node 'Body'. "
+ },
+ "resource_ferrite": {
+  "file": "resource_ferrite.glb",
+  "category": "resource",
+  "tris": 688,
+  "size": [
+   1.833,
+   1.287,
+   1.404
+  ],
+  "min": [
+   -0.876,
+   -0.075,
+   -0.677
+  ],
+  "max": [
+   0.958,
+   1.212,
+   0.727
+  ],
+  "nodes": [
+   "Body"
+  ],
+  "materials": [
+   "Rock_B",
+   "Rock_A",
+   "Res_Ferrite",
+   "Res_Ferrite_Fleck"
+  ],
+  "collision": {
+   "shape": "sphere",
+   "radius": 0.7,
+   "offset": [
+    0,
+    0.5,
+    0
+   ]
+  },
+  "notes": "Ferrite node ~1.2 m: rocky lump (Rock_A / Rock_B, tinted) with raised orange-brown ore veins and ore nuggets (Res_Ferrite: metallic 0.9, rough 0.4, tiny emission 0.35 so it stays readable without sky reflections) and small shiny flecks (Res_Ferrite_Fleck: metallic 1.0). Fixed colours (Res_* materials are NOT tinted by the game). Origin = ground contact at the bottom centre. Single mesh node 'Body'. "
+ },
+ "resource_carbon": {
+  "file": "resource_carbon.glb",
+  "category": "resource",
+  "tris": 590,
+  "size": [
+   2.145,
+   1.339,
+   2.05
+  ],
+  "min": [
+   -1.068,
+   -0.019,
+   -1.128
+  ],
+  "max": [
+   1.078,
+   1.321,
+   0.922
+  ],
+  "nodes": [
+   "Body"
+  ],
+  "materials": [
+   "Res_Carbon",
+   "Res_Carbon_Tip"
+  ],
+  "collision": {
+   "shape": "sphere",
+   "radius": 0.55,
+   "offset": [
+    0,
+    0.45,
+    0
+   ]
+  },
+  "notes": "Carbon node ~1.1 m: squat plant, 5 dark purple bulbs (Res_Carbon, faint purple emission 0.25) on short stems, 5 drooping leaf blades, a tall bud with a faintly glowing green tip (Res_Carbon_Tip: green emission 1.6) and two small glowing nubs. Fixed colours (Res_* materials are NOT tinted by the game). Origin = ground contact at the bottom centre. Single mesh node 'Body'. "
+ },
+ "cactus_a": {
+  "file": "cactus_a.glb",
+  "category": "flora",
+  "tris": 1080,
+  "size": [
+   2.246,
+   4.756,
+   1.275
+  ],
+  "min": [
+   -1.059,
+   -0.157,
+   -0.676
+  ],
+  "max": [
+   1.187,
+   4.599,
+   0.599
+  ],
+  "nodes": [
+   "Body"
+  ],
+  "materials": [
+   "Foliage_A",
+   "Foliage_B",
+   "Foliage_Flower"
+  ],
+  "collision": {
+   "shape": "cylinder",
+   "radius": 0.45,
+   "height": 4.0,
+   "offset": [
+    0,
+    2.0,
+    0
+   ]
+  },
+  "notes": "Saguaro cactus ~4.6 m with two upturned arms; flat-shaded, 8-ribbed body (Foliage_A, double sided), small blossoms on the three tips (Foliage_Flower petals + Foliage_B core). Biome tint keys in biomes.gd: cactus -> 'cactus', dead_tree -> 'wood' (Bark), shrub -> 'shrub', rocks -> 'rock'. Origin = ground contact at the trunk base. Single mesh node 'Body'."
+ },
+ "cactus_b": {
+  "file": "cactus_b.glb",
+  "category": "flora",
+  "tris": 803,
+  "size": [
+   1.82,
+   1.302,
+   1.721
+  ],
+  "min": [
+   -0.74,
+   -0.09,
+   -0.905
+  ],
+  "max": [
+   1.08,
+   1.212,
+   0.817
+  ],
+  "nodes": [
+   "Body"
+  ],
+  "materials": [
+   "Foliage_A",
+   "Foliage_B",
+   "Foliage_Flower"
+  ],
+  "collision": {
+   "shape": "sphere",
+   "radius": 0.6,
+   "offset": [
+    0.17,
+    0.45,
+    -0.04
+   ]
+  },
+  "notes": "Cactus cluster ~1.45 m: one ribbed barrel cactus (Foliage_A) + a prickly-pear bush of 7 flat pads (Foliage_A) with blossoms (Foliage_Flower petals, Foliage_B core). Biome tint keys in biomes.gd: cactus -> 'cactus', dead_tree -> 'wood' (Bark), shrub -> 'shrub', rocks -> 'rock'. Origin = ground contact; the cluster extends mostly towards -X/+Z(Godot). Single mesh node 'Body'."
+ },
+ "dead_tree": {
+  "file": "dead_tree.glb",
+  "category": "flora",
+  "tris": 1036,
+  "size": [
+   2.73,
+   5.447,
+   1.308
+  ],
+  "min": [
+   -0.6,
+   -0.169,
+   -0.595
+  ],
+  "max": [
+   2.13,
+   5.278,
+   0.712
+  ],
+  "nodes": [
+   "Body"
+  ],
+  "materials": [
+   "Bark"
+  ],
+  "collision": {
+   "shape": "cylinder",
+   "radius": 0.4,
+   "height": 4.0,
+   "offset": [
+    0,
+    2.0,
+    0
+   ]
+  },
+  "notes": "Twisted bare dead tree ~5.3 m: leaning trunk with root flare, three main limbs + side branches with forks and broken stubs. Only Bark (multiplied by the wood tint x1.8; very dark under the volcanic wood tint = charred look). Biome tint keys in biomes.gd: cactus -> 'cactus', dead_tree -> 'wood' (Bark), shrub -> 'shrub', rocks -> 'rock'. Origin = ground contact at the trunk base. Single mesh node 'Body'."
+ },
+ "desert_shrub": {
+  "file": "desert_shrub.glb",
+  "category": "flora",
+  "tris": 310,
+  "size": [
+   1.486,
+   0.971,
+   1.467
+  ],
+  "min": [
+   -0.77,
+   -0.06,
+   -0.73
+  ],
+  "max": [
+   0.717,
+   0.911,
+   0.737
+  ],
+  "nodes": [
+   "Body"
+  ],
+  "materials": [
+   "Foliage_B"
+  ],
+  "collision": {
+   "shape": "none"
+  },
+  "notes": "Spiky dry shrub ~0.9 m: 46 curved pointed blades (double sided Foliage_B) around a small core. Biome tint keys in biomes.gd: cactus -> 'cactus', dead_tree -> 'wood' (Bark), shrub -> 'shrub', rocks -> 'rock'. Origin = ground contact at the centre. Single mesh node 'Body'."
+ },
+ "mesa_rock": {
+  "file": "mesa_rock.glb",
+  "category": "rock",
+  "tris": 524,
+  "size": [
+   9.529,
+   9.45,
+   8.765
+  ],
+  "min": [
+   -4.616,
+   -0.2,
+   -4.306
+  ],
+  "max": [
+   4.913,
+   9.25,
+   4.459
+  ],
+  "nodes": [
+   "Body"
+  ],
+  "materials": [
+   "Rock_A",
+   "Rock_B"
+  ],
+  "collision": {
+   "shape": "box",
+   "size": [
+    5.4,
+    8.2,
+    5.4
+   ],
+   "offset": [
+    0,
+    4.1,
+    0
+   ]
+  },
+  "notes": "Banded mesa / hoodoo rock tower ~9.3 m: 9 tiered layers alternating Rock_A / Rock_B (flat ledges, overhanging cap rock), sloped talus skirt (r ~4.5 m at the foot) and 4 boulders around it. Collision box covers the tower only (not the talus skirt). Rock_A / Rock_B are recoloured by the game with the planet's rock tint (Rock_B is the darker value, used for stained patches). Low-poly flat shading, base sinks ~8 cm below y=0 so it sits in the terrain. Origin = centre of the base at ground level. Single mesh node 'Body'."
+ },
+ "rock_arch": {
+  "file": "rock_arch.glb",
+  "category": "rock",
+  "tris": 624,
+  "size": [
+   13.149,
+   10.201,
+   4.563
+  ],
+  "min": [
+   -6.343,
+   -0.692,
+   -2.399
+  ],
+  "max": [
+   6.806,
+   9.51,
+   2.164
+  ],
+  "nodes": [
+   "Body"
+  ],
+  "materials": [
+   "Rock_A",
+   "Rock_B"
+  ],
+  "collision": {
+   "shape": "box",
+   "size": [
+    3.8,
+    6.5,
+    4.0
+   ],
+   "offset": [
+    -4.1,
+    3.25,
+    0.0
+   ]
+  },
+  "notes": "Natural stone arch ~9.5 m tall, ~11 m wide outside (opening ~5.5 m wide, ~7 m high): faceted pillars and a thinner crown, banded Rock_A / Rock_B, rubble at the feet. The `collision` hint is only the LEFT pillar (box centred x=-4.1 m); `collision_boxes` (extra manifest field) lists all three boxes (both pillars + crown) so the opening stays walkable. Rock_A / Rock_B are recoloured by the game with the planet's rock tint (Rock_B is the darker value, used for stained patches). Low-poly flat shading, base sinks ~8 cm below y=0 so it sits in the terrain. Origin = ground level in the middle between the pillars (opening along the Godot X axis). Single mesh node 'Body'.",
+  "collision_boxes": [
+   {
+    "size": [
+     3.8,
+     6.5,
+     4.0
+    ],
+    "offset": [
+     -4.1,
+     3.25,
+     0
+    ]
+   },
+   {
+    "size": [
+     3.8,
+     6.5,
+     4.0
+    ],
+    "offset": [
+     4.1,
+     3.25,
+     0
+    ]
+   },
+   {
+    "size": [
+     9.6,
+     3.4,
+     3.6
+    ],
+    "offset": [
+     0,
+     7.8,
+     0
+    ]
+   }
+  ]
+ },
+ "mushroom_giant": {
+  "file": "mushroom_giant.glb",
+  "category": "flora",
+  "tris": 1972,
+  "size": [
+   10.9,
+   12.073,
+   10.928
+  ],
+  "min": [
+   -5.26,
+   -0.185,
+   -5.767
+  ],
+  "max": [
+   5.64,
+   11.888,
+   5.16
+  ],
+  "nodes": [
+   "Body"
+  ],
+  "materials": [
+   "Bark_Pale",
+   "Foliage_B",
+   "Glow_Main"
+  ],
+  "collision": {
+   "shape": "cylinder",
+   "radius": 0.85,
+   "height": 7.0,
+   "offset": [
+    0,
+    3.5,
+    0
+   ]
+  },
+  "notes": "Giant mushroom tree ~12 m: thick curved pale stalk (Bark_Pale, flared buttress base, pleated skirt ring at ~7 m), huge scalloped cap r ~5.4 m (Foliage_B) with 14 pale spots (Bark_Pale), glowing pleated gills under the cap (Glow_Main) and 4 baby mushrooms at the foot. You can walk under the cap (underside at ~8 m); collision = stalk only. The game applies ONE tint key per model to every tinted material: Foliage_* / Glow_Main / Crystal_Main take that key's colour (biomes.gd), Bark / Bark_Pale are multiplied by the wood tint. Origin = ground contact at the stalk base. Single mesh node 'Body'."
+ },
+ "mushroom_small": {
+  "file": "mushroom_small.glb",
+  "category": "flora",
+  "tris": 740,
+  "size": [
+   1.377,
+   1.156,
+   1.145
+  ],
+  "min": [
+   -0.644,
+   -0.062,
+   -0.519
+  ],
+  "max": [
+   0.732,
+   1.094,
+   0.626
+  ],
+  "nodes": [
+   "Body"
+  ],
+  "materials": [
+   "Bark_Pale",
+   "Glow_Main",
+   "Foliage_B"
+  ],
+  "collision": {
+   "shape": "none"
+  },
+  "notes": "Cluster of 5 small mushrooms ~1.1 m (Glow_Main caps in dome / flat / cone shapes, Bark_Pale stems + gills) on 4 mossy lumps (Foliage_B). The game applies ONE tint key per model to every tinted material: Foliage_* / Glow_Main / Crystal_Main take that key's colour (biomes.gd), Bark / Bark_Pale are multiplied by the wood tint. Origin = ground contact at the centre. Single mesh node 'Body'."
+ },
+ "spore_pod": {
+  "file": "spore_pod.glb",
+  "category": "flora",
+  "tris": 709,
+  "size": [
+   2.426,
+   2.549,
+   1.599
+  ],
+  "min": [
+   -0.836,
+   -0.077,
+   -0.933
+  ],
+  "max": [
+   1.59,
+   2.472,
+   0.667
+  ],
+  "nodes": [
+   "Body"
+  ],
+  "materials": [
+   "Foliage_B",
+   "Foliage_A",
+   "Glow_Main"
+  ],
+  "collision": {
+   "shape": "none"
+  },
+  "notes": "Bulb plant ~2.4 m: arching stem (Foliage_B), big ribbed pod (Foliage_A) with a glowing upper end (Glow_Main) + 5 sepals (Foliage_B), 5 glowing spore motes above it, a small second pod and 6 ground leaves (Foliage_A). The game applies ONE tint key per model to every tinted material: Foliage_* / Glow_Main / Crystal_Main take that key's colour (biomes.gd), Bark / Bark_Pale are multiplied by the wood tint. Origin = ground contact at the stem base (pod leans towards +X Blender = +X Godot). Single mesh node 'Body'."
+ },
+ "tentacle_plant": {
+  "file": "tentacle_plant.glb",
+  "category": "flora",
+  "tris": 1324,
+  "size": [
+   2.976,
+   2.604,
+   3.178
+  ],
+  "min": [
+   -1.875,
+   -0.346,
+   -2.166
+  ],
+  "max": [
+   1.101,
+   2.259,
+   1.012
+  ],
+  "nodes": [
+   "Body"
+  ],
+  "materials": [
+   "Foliage_B",
+   "Glow_Main"
+  ],
+  "collision": {
+   "shape": "none"
+  },
+  "notes": "Alien tentacle plant ~2.3 m: lumpy fleshy base + 6 thick curving tentacles (Foliage_B, differently bent / long) with glowing tips and small glowing sucker nubs (Glow_Main). The game applies ONE tint key per model to every tinted material: Foliage_* / Glow_Main / Crystal_Main take that key's colour (biomes.gd), Bark / Bark_Pale are multiplied by the wood tint. Origin = ground contact at the base centre. Single mesh node 'Body'."
+ },
+ "toxic_crystal": {
+  "file": "toxic_crystal.glb",
+  "category": "resource",
+  "tris": 420,
+  "size": [
+   1.849,
+   2.146,
+   1.778
+  ],
+  "min": [
+   -0.925,
+   -0.072,
+   -0.946
+  ],
+  "max": [
+   0.925,
+   2.075,
+   0.832
+  ],
+  "nodes": [
+   "Body"
+  ],
+  "materials": [
+   "Rock_B",
+   "Glow_Main",
+   "Crystal_Main"
+  ],
+  "collision": {
+   "shape": "sphere",
+   "radius": 1.0,
+   "offset": [
+    0,
+    0.9,
+    0
+   ]
+  },
+  "notes": "Toxic crystal cluster ~2 m: 7 hexagonal / pentagonal translucent crystals (Crystal_Main, flat shaded) each with a glowing core (Glow_Main) inside, a glowing slime puddle (Glow_Main) and 3 dark rubble stones (Rock_B) at the foot. The game applies ONE tint key per model to every tinted material: Foliage_* / Glow_Main / Crystal_Main take that key's colour (biomes.gd), Bark / Bark_Pale are multiplied by the wood tint. Origin = ground contact at the centre. Single mesh node 'Body'."
+ },
+ "tree_pine_snow": {
+  "file": "tree_pine_snow.glb",
+  "category": "flora",
+  "tris": 1514,
+  "size": [
+   7.345,
+   10.496,
+   5.89
+  ],
+  "min": [
+   -3.566,
+   -0.146,
+   -3.005
+  ],
+  "max": [
+   3.779,
+   10.35,
+   2.885
+  ],
+  "nodes": [
+   "Body"
+  ],
+  "materials": [
+   "Bark",
+   "Foliage_A",
+   "Snow",
+   "Foliage_B"
+  ],
+  "collision": {
+   "shape": "cylinder",
+   "radius": 0.5,
+   "height": 5.0,
+   "offset": [
+    0,
+    2.5,
+    0
+   ]
+  },
+  "notes": "Snow-laden conifer ~10.4 m: slim trunk (Bark) + 5 steep drooping skirt tiers (alternating Foliage_A / Foliage_B, scalloped rims, r 3.1 -> 1.1 m) each with a lumpy Snow cap on its upper part, pointed leader spike with a snow tip. Collision = trunk. Tint keys in biomes.gd: pine trees -> 'pine' (Foliage_*), ice -> 'ice' (Crystal_Main keeps alpha 0.7), shrub -> 'frost', rocks -> 'rock'. Snow is a fixed white. Origin = ground contact at the trunk base. Single mesh node 'Body'."
+ },
+ "tree_pine_snow_b": {
+  "file": "tree_pine_snow_b.glb",
+  "category": "flora",
+  "tris": 1177,
+  "size": [
+   5.063,
+   6.47,
+   4.585
+  ],
+  "min": [
+   -2.388,
+   -0.347,
+   -2.336
+  ],
+  "max": [
+   2.675,
+   6.123,
+   2.249
+  ],
+  "nodes": [
+   "Body"
+  ],
+  "materials": [
+   "Bark",
+   "Foliage_B",
+   "Snow",
+   "Foliage_A"
+  ],
+  "collision": {
+   "shape": "cylinder",
+   "radius": 0.45,
+   "height": 3.0,
+   "offset": [
+    0,
+    1.5,
+    0
+   ]
+  },
+  "notes": "Smaller, squatter fir ~6.1 m: slightly leaning trunk (Bark), 4 star-shaped tiers (r 2.05 -> 1.0 m, Foliage_B / Foliage_A) with thick Snow caps, snow-tipped spike and a snow drift at the foot. Collision = trunk. Tint keys in biomes.gd: pine trees -> 'pine' (Foliage_*), ice -> 'ice' (Crystal_Main keeps alpha 0.7), shrub -> 'frost', rocks -> 'rock'. Snow is a fixed white. Origin = ground contact at the trunk base. Single mesh node 'Body'."
+ },
+ "ice_spire": {
+  "file": "ice_spire.glb",
+  "category": "rock",
+  "tris": 480,
+  "size": [
+   3.111,
+   5.318,
+   3.195
+  ],
+  "min": [
+   -1.599,
+   -0.283,
+   -1.609
+  ],
+  "max": [
+   1.512,
+   5.034,
+   1.586
+  ],
+  "nodes": [
+   "Body"
+  ],
+  "materials": [
+   "Crystal_Main",
+   "Snow"
+  ],
+  "collision": {
+   "shape": "cylinder",
+   "radius": 1.2,
+   "height": 4.5,
+   "offset": [
+    0,
+    2.25,
+    0
+   ]
+  },
+  "notes": "Cluster of 8 translucent ice crystal spires, tallest ~5 m (flat shaded 5/6-sided prisms with long pointed tips, Crystal_Main alpha 0.7, game recolours with the 'ice' tint) on a Snow drift base. Tint keys in biomes.gd: pine trees -> 'pine' (Foliage_*), ice -> 'ice' (Crystal_Main keeps alpha 0.7), shrub -> 'frost', rocks -> 'rock'. Snow is a fixed white. Origin = ground contact at the centre. Single mesh node 'Body'."
+ },
+ "ice_boulder": {
+  "file": "ice_boulder.glb",
+  "category": "rock",
+  "tris": 312,
+  "size": [
+   3.17,
+   2.15,
+   2.582
+  ],
+  "min": [
+   -1.413,
+   -0.114,
+   -1.301
+  ],
+  "max": [
+   1.757,
+   2.036,
+   1.281
+  ],
+  "nodes": [
+   "Body"
+  ],
+  "materials": [
+   "Crystal_Main",
+   "Snow"
+  ],
+  "collision": {
+   "shape": "sphere",
+   "radius": 1.0,
+   "offset": [
+    0,
+    0.8,
+    0
+   ]
+  },
+  "notes": "Faceted translucent ice rock ~2.2 x 2 x 1.8 m (Crystal_Main, flat shaded, denser inner core shell, a smaller fused boulder, 3 crystal shards on top, Snow patches around the foot). Tint keys in biomes.gd: pine trees -> 'pine' (Foliage_*), ice -> 'ice' (Crystal_Main keeps alpha 0.7), shrub -> 'frost', rocks -> 'rock'. Snow is a fixed white. Origin = ground contact at the centre. Single mesh node 'Body'."
+ },
+ "frost_shrub": {
+  "file": "frost_shrub.glb",
+  "category": "flora",
+  "tris": 415,
+  "size": [
+   1.616,
+   1.142,
+   1.765
+  ],
+  "min": [
+   -0.766,
+   -0.13,
+   -0.99
+  ],
+  "max": [
+   0.85,
+   1.011,
+   0.774
+  ],
+  "nodes": [
+   "Body"
+  ],
+  "materials": [
+   "Foliage_B",
+   "Snow"
+  ],
+  "collision": {
+   "shape": "none"
+  },
+  "notes": "Frosted shrub ~1 m: 30 upright pointed blades (Foliage_B) with Snow-white tips, 5 leafy lumps (Foliage_B) capped with Snow and a Snow mound at the base. Tint keys in biomes.gd: pine trees -> 'pine' (Foliage_*), ice -> 'ice' (Crystal_Main keeps alpha 0.7), shrub -> 'frost', rocks -> 'rock'. Snow is a fixed white. Origin = ground contact at the centre. Single mesh node 'Body'."
+ },
+ "snow_rock": {
+  "file": "snow_rock.glb",
+  "category": "rock",
+  "tris": 255,
+  "size": [
+   3.689,
+   2.348,
+   3.371
+  ],
+  "min": [
+   -1.991,
+   -0.297,
+   -1.74
+  ],
+  "max": [
+   1.698,
+   2.051,
+   1.631
+  ],
+  "nodes": [
+   "Body"
+  ],
+  "materials": [
+   "Rock_A",
+   "Rock_B",
+   "Snow"
+  ],
+  "collision": {
+   "shape": "sphere",
+   "radius": 1.1,
+   "offset": [
+    0,
+    0.85,
+    0
+   ]
+  },
+  "notes": "Tall angular rock ~2 m (Rock_A with Rock_B patches, flat shaded) plus a leaning companion stone, both capped with thick lumpy Snow, snow drifts piled at the foot. Rock_A / Rock_B are recoloured by the game with the planet's rock tint (Rock_B is the darker value, used for stained patches). Low-poly flat shading, base sinks ~8 cm below y=0 so it sits in the terrain. Snow is a fixed white. Origin = ground contact at the centre. Single mesh node 'Body'."
+ },
+ "obsidian_spire": {
+  "file": "obsidian_spire.glb",
+  "category": "rock",
+  "tris": 326,
+  "size": [
+   3.708,
+   6.365,
+   3.542
+  ],
+  "min": [
+   -1.952,
+   -0.265,
+   -1.822
+  ],
+  "max": [
+   1.756,
+   6.1,
+   1.72
+  ],
+  "nodes": [
+   "Body"
+  ],
+  "materials": [
+   "Rock_B",
+   "Obsidian",
+   "Glow_Lava"
+  ],
+  "collision": {
+   "shape": "cylinder",
+   "radius": 1.2,
+   "height": 5.0,
+   "offset": [
+    0,
+    2.5,
+    0
+   ]
+  },
+  "notes": "Cluster of 8 glassy black blade shards, tallest ~6.1 m (flat shaded, flattened 4-sided prisms with sharp tips, two broken slanted tops, Obsidian) on dark rubble (Rock_B) with 3 tiny Glow_Lava glints at the foot. Fixed colours: Obsidian (near-black glossy, metallic 0.15 rough 0.1) and Glow_Lava (orange emission 4.0; models.gd exempts it from the Glow* tint). Rock_A / Rock_B and Bark are tinted by the game (volcanic rock tint, wood tint = very dark). Origin = ground contact at the centre. Single mesh node 'Body'."
+ },
+ "lava_rock": {
+  "file": "lava_rock.glb",
+  "category": "rock",
+  "tris": 494,
+  "size": [
+   3.292,
+   2.154,
+   2.648
+  ],
+  "min": [
+   -1.597,
+   -0.101,
+   -1.028
+  ],
+  "max": [
+   1.695,
+   2.052,
+   1.621
+  ],
+  "nodes": [
+   "Body"
+  ],
+  "materials": [
+   "Rock_B",
+   "Rock_A",
+   "Glow_Lava"
+  ],
+  "collision": {
+   "shape": "sphere",
+   "radius": 1.1,
+   "offset": [
+    0,
+    0.9,
+    0
+   ]
+  },
+  "notes": "Cracked dark boulder ~2.2 x 1.9 x 2 m: 8+ convex crust plates (Rock_B / Rock_A alternating, flat shaded) separated by ~13 cm gaps through which the Glow_Lava core glows; 3 loose chips at the foot. Fixed colours: Obsidian (near-black glossy, metallic 0.15 rough 0.1) and Glow_Lava (orange emission 4.0; models.gd exempts it from the Glow* tint). Rock_A / Rock_B and Bark are tinted by the game (volcanic rock tint, wood tint = very dark). Origin = ground contact at the centre. Single mesh node 'Body'."
+ },
+ "charred_tree": {
+  "file": "charred_tree.glb",
+  "category": "flora",
+  "tris": 804,
+  "size": [
+   1.763,
+   4.906,
+   2.169
+  ],
+  "min": [
+   -0.94,
+   -0.166,
+   -0.887
+  ],
+  "max": [
+   0.823,
+   4.74,
+   1.282
+  ],
+  "nodes": [
+   "Body"
+  ],
+  "materials": [
+   "Bark",
+   "Glow_Lava"
+  ],
+  "collision": {
+   "shape": "cylinder",
+   "radius": 0.4,
+   "height": 4.0,
+   "offset": [
+    0,
+    2.0,
+    0
+   ]
+  },
+  "notes": "Burnt trunk ~4.7 m: ribbed split trunk with root flare (Bark only - the volcanic wood tint x1.8 makes it near black), splintered broken top with a glowing core, 4 snapped limbs + a twig, 8 ember spots on the bark and a glowing ember mound at the foot (Glow_Lava). Fixed colours: Obsidian (near-black glossy, metallic 0.15 rough 0.1) and Glow_Lava (orange emission 4.0; models.gd exempts it from the Glow* tint). Rock_A / Rock_B and Bark are tinted by the game (volcanic rock tint, wood tint = very dark). Origin = ground contact at the trunk base. Single mesh node 'Body'."
+ },
+ "vent_cone": {
+  "file": "vent_cone.glb",
+  "category": "rock",
+  "tris": 780,
+  "size": [
+   5.871,
+   3.203,
+   5.642
+  ],
+  "min": [
+   -2.744,
+   -0.13,
+   -2.578
+  ],
+  "max": [
+   3.127,
+   3.073,
+   3.063
+  ],
+  "nodes": [
+   "Body"
+  ],
+  "materials": [
+   "Rock_B",
+   "Rock_A",
+   "Glow_Lava"
+  ],
+  "collision": {
+   "shape": "cylinder",
+   "radius": 1.8,
+   "height": 2.5,
+   "offset": [
+    0,
+    1.25,
+    0
+   ]
+  },
+  "notes": "Small volcanic cone ~3 m high / ~5 m wide at the foot (Rock_B with two lighter Rock_A bands, 6 ridges): crater with a glowing lava lake (Glow_Lava) 0.5 m below the rim, 4 lava tongues running down the flanks, a crown of 6 jagged rim stones and 4 ash blocks around the foot. Collision = cone body (cylinder r 1.8, h 2.5). Fixed colours: Obsidian (near-black glossy, metallic 0.15 rough 0.1) and Glow_Lava (orange emission 4.0; models.gd exempts it from the Glow* tint). Rock_A / Rock_B and Bark are tinted by the game (volcanic rock tint, wood tint = very dark). Origin = ground contact at the centre. Single mesh node 'Body'."
+ },
+ "crystal_cluster_a": {
+  "file": "crystal_cluster_a.glb",
+  "category": "rock",
+  "tris": 405,
+  "size": [
+   2.447,
+   3.164,
+   2.467
+  ],
+  "min": [
+   -1.285,
+   -0.156,
+   -1.206
+  ],
+  "max": [
+   1.162,
+   3.008,
+   1.26
+  ],
+  "nodes": [
+   "Body"
+  ],
+  "materials": [
+   "Rock_B",
+   "Crystal_Main",
+   "Glow_Main"
+  ],
+  "collision": {
+   "shape": "cylinder",
+   "radius": 1.2,
+   "height": 2.8,
+   "offset": [
+    0,
+    1.4,
+    0
+   ]
+  },
+  "notes": "Radial cluster of 8 glowing crystal prisms, tallest ~3 m (flat shaded; translucent Crystal_Main shell with a smaller Glow_Main crystal buried inside each, 5/6 sides, one broken slanted tip) on 3 dark rubble stones (Rock_B). The game applies ONE tint key per model ('glow_a' / 'glow_b' in biomes.gd): Crystal_Main takes it as albedo (alpha 0.7 kept), Glow_Main as emission. Rock_B / Bark are tinted by the rock / wood tint. Origin = ground contact at the centre. Single mesh node 'Body'."
+ },
+ "crystal_cluster_b": {
+  "file": "crystal_cluster_b.glb",
+  "category": "rock",
+  "tris": 664,
+  "size": [
+   2.779,
+   1.325,
+   2.426
+  ],
+  "min": [
+   -1.435,
+   -0.118,
+   -1.163
+  ],
+  "max": [
+   1.345,
+   1.208,
+   1.263
+  ],
+  "nodes": [
+   "Body"
+  ],
+  "materials": [
+   "Rock_B",
+   "Crystal_Main",
+   "Glow_Main"
+  ],
+  "collision": {
+   "shape": "cylinder",
+   "radius": 1.2,
+   "height": 1.2,
+   "offset": [
+    0,
+    0.6,
+    0
+   ]
+  },
+  "notes": "Wide low bed of 15 small glowing crystals (0.4 - 1.25 m, spread over ~2.8 m, Crystal_Main shell + Glow_Main core each) on a flat rubble pad (Rock_B). The game applies ONE tint key per model ('glow_a' / 'glow_b' in biomes.gd): Crystal_Main takes it as albedo (alpha 0.7 kept), Glow_Main as emission. Rock_B / Bark are tinted by the rock / wood tint. Origin = ground contact at the centre. Single mesh node 'Body'."
+ },
+ "crystal_cluster_c": {
+  "file": "crystal_cluster_c.glb",
+  "category": "rock",
+  "tris": 359,
+  "size": [
+   2.441,
+   4.68,
+   2.558
+  ],
+  "min": [
+   -1.219,
+   -0.118,
+   -1.229
+  ],
+  "max": [
+   1.223,
+   4.562,
+   1.329
+  ],
+  "nodes": [
+   "Body"
+  ],
+  "materials": [
+   "Rock_B",
+   "Crystal_Main",
+   "Glow_Main"
+  ],
+  "collision": {
+   "shape": "cylinder",
+   "radius": 1.1,
+   "height": 4.4,
+   "offset": [
+    0,
+    2.2,
+    0
+   ]
+  },
+  "notes": "Tall slender crystal towers, tallest ~4.6 m, 7 prisms (Crystal_Main shell + Glow_Main core, one broken slanted tip) with rubble (Rock_B) at the foot. The game applies ONE tint key per model ('glow_a' / 'glow_b' in biomes.gd): Crystal_Main takes it as albedo (alpha 0.7 kept), Glow_Main as emission. Rock_B / Bark are tinted by the rock / wood tint. Origin = ground contact at the centre. Single mesh node 'Body'."
+ },
+ "rad_fungus": {
+  "file": "rad_fungus.glb",
+  "category": "flora",
+  "tris": 572,
+  "size": [
+   1.159,
+   0.942,
+   1.053
+  ],
+  "min": [
+   -0.486,
+   -0.109,
+   -0.53
+  ],
+  "max": [
+   0.673,
+   0.833,
+   0.522
+  ],
+  "nodes": [
+   "Body"
+  ],
+  "materials": [
+   "Bark",
+   "Glow_Main"
+  ],
+  "collision": {
+   "shape": "none"
+  },
+  "notes": "Glowing shelf fungus ~0.85 m: short gnarled splintered stump (Bark) with 7 flattened bracket shelves spiralling up it (Glow_Main) and 5 glowing buds at the foot. The game applies ONE tint key per model ('glow_a' / 'glow_b' in biomes.gd): Crystal_Main takes it as albedo (alpha 0.7 kept), Glow_Main as emission. Rock_B / Bark are tinted by the rock / wood tint. Origin = ground contact at the stump base. Single mesh node 'Body'."
+ },
+ "moon_rock_a": {
+  "file": "moon_rock_a.glb",
+  "category": "rock",
+  "tris": 182,
+  "size": [
+   2.578,
+   1.468,
+   1.937
+  ],
+  "min": [
+   -1.187,
+   -0.06,
+   -0.978
+  ],
+  "max": [
+   1.39,
+   1.408,
+   0.959
+  ],
+  "nodes": [
+   "Body"
+  ],
+  "materials": [
+   "Rock_A"
+  ],
+  "collision": {
+   "shape": "sphere",
+   "radius": 1.0,
+   "offset": [
+    0,
+    0.7,
+    0
+   ]
+  },
+  "notes": "Sharp angular regolith rock ~2.6 x 1.5 x 1.9 m (convex faceted hull with chipped edges + a smaller fragment on each side). Rock_A is recoloured by the game with the planet's rock tint; the model is completely flat shaded with crisp facets (no smoothing). Origin = ground contact near the main rock. Single mesh node 'Body'."
+ },
+ "moon_rock_b": {
+  "file": "moon_rock_b.glb",
+  "category": "rock",
+  "tris": 76,
+  "size": [
+   2.925,
+   1.567,
+   2.7
+  ],
+  "min": [
+   -1.311,
+   -0.07,
+   -1.237
+  ],
+  "max": [
+   1.614,
+   1.497,
+   1.463
+  ],
+  "nodes": [
+   "Body"
+  ],
+  "materials": [
+   "Rock_A"
+  ],
+  "collision": {
+   "shape": "box",
+   "size": [
+    2.53,
+    1.17,
+    2.3
+   ],
+   "offset": [
+    0.15,
+    0.71,
+    0.11
+   ]
+  },
+  "notes": "Flat shard-like rock ~2.9 x 1.5 x 2.7 m: a big leaning wedge plate, a second plate leaning against it, a flat shard and a splinter (all crisp facets). Collision = box around everything. Rock_A is recoloured by the game with the planet's rock tint; the model is completely flat shaded with crisp facets (no smoothing). Origin = ground contact near the big plate. Single mesh node 'Body'."
+ },
+ "probe_wreck": {
+  "file": "probe_wreck.glb",
+  "category": "structure",
+  "tris": 2496,
+  "size": [
+   5.889,
+   3.739,
+   3.472
+  ],
+  "min": [
+   -2.65,
+   -0.22,
+   -1.719
+  ],
+  "max": [
+   3.238,
+   3.519,
+   1.753
+  ],
+  "nodes": [
+   "Body"
+  ],
+  "materials": [
+   "Metal",
+   "Hull_Dark",
+   "Emissive_Light"
+  ],
+  "collision": {
+   "shape": "box",
+   "size": [
+    4.69,
+    1.7,
+    2.27
+   ],
+   "offset": [
+    0.29,
+    0.63,
+    0.02
+   ]
+  },
+  "notes": "Old crashed probe ~3.3 m (mast) / ~5 m wide: tilted boxy bus (Metal, scorched lower half + panels in Hull_Dark), torn parabolic dish leaning on the ground (dented, 2 of 3 feed struts intact), bent mast with cross bar, solar array with a hinged bent second panel (Hull_Dark cells, Metal ribs), a fuel tank sphere, scattered plates and one tiny red blink lamp (Emissive_Light, red in this GLB). NOT tinted (only Metal / Hull_Dark / Emissive_Light). Collision box covers the bus + dish area only (cap 1.7 m high), not the mast / panels. Origin = ground contact below the bus. Single mesh node 'Body'."
+ },
+ "space_station": {
+  "file": "space_station.glb",
+  "category": "space",
+  "tris": 15280,
+  "size": [
+   153.561,
+   120.9,
+   184.731
+  ],
+  "min": [
+   -76.781,
+   -36.0,
+   -107.95
+  ],
+  "max": [
+   76.781,
+   84.9,
+   76.781
+  ],
+  "nodes": [
+   "Ring",
+   "Station",
+   "Marker_Dock"
+  ],
+  "materials": [
+   "Hull_Accent",
+   "Hull_Dark",
+   "Hull_Paint",
+   "Emissive_Window",
+   "Emissive_Light",
+   "Emissive_Amber",
+   "Metal",
+   "Solar_Cell",
+   "Solar_Grid",
+   "Emissive_NavRed",
+   "Emissive_Screen",
+   "Emissive_NavGreen"
+  ],
+  "collision": {
+   "shape": "none"
+  },
+  "notes": "Orbital station, real size: ring outer diameter 150 m (inner 114 m), whole model 154 x 121 x 185 m (Godot x, y, z) (game scales x2.4). Node tree: Station (root mesh: hub, solar wings, antennas, radiator fins, docking pier + bay) > Ring (rotating ring + hub collar + 4 spokes + 4 docking ports + hull plates; ORIGIN EXACTLY AT THE HUB CENTRE (0,0,0), rotation 0, scale 1; spin it around its local Y axis (= Blender Z) - the spokes and collar belong to the Ring mesh on purpose so they turn with it) and Marker_Dock (empty at the docking bay mouth, 106.6 m from the hub along -Z Godot, 33 m 'up' in Godot Y; +Y Blender / -Z Godot = out of the bay, bay opening 21 m wide x 15 m high, 36 m deep). The docking pier sits above the ring plane (Godot +Y side) so the ring never sweeps through it. Materials (fixed colours, nothing tinted): Hull_Paint (white), Hull_Accent (orange), Hull_Dark, Metal, Solar_Cell / Solar_Grid, Emissive_Window (warm window strips on the ring), Emissive_Light (cyan guide lights in the bay + port lights), Emissive_Amber, Emissive_Screen, Emissive_NavRed / Emissive_NavGreen (mouth corner lights). Origin = hub centre."
+ },
+ "creature_grazer": {
+  "file": "creature_grazer.glb",
+  "category": "creature",
+  "tris": 2336,
+  "size": [
+   0.954,
+   1.482,
+   2.441
+  ],
+  "min": [
+   -0.477,
+   0.0,
+   -1.276
+  ],
+  "max": [
+   0.477,
+   1.482,
+   1.165
+  ],
+  "nodes": [
+   "Body",
+   "Head",
+   "Tail",
+   "Leg_FL",
+   "Leg_FR",
+   "Leg_BL",
+   "Leg_BR"
+  ],
+  "materials": [
+   "Fur_Tan",
+   "Fur_Cream",
+   "Fur_Teal",
+   "Skin_Nose",
+   "Eye_Dark",
+   "Eye_White",
+   "Horn",
+   "Hoof"
+  ],
+  "collision": {
+   "shape": "box",
+   "size": [
+    0.7,
+    1.23,
+    2.19
+   ],
+   "offset": [
+    0.0,
+    0.74,
+    -0.06
+   ]
+  },
+  "notes": "Chunky four-legged herbivore ~2.4 m long, 1.5 m tall (horn tips): barrel body with shoulder hump, tabby teal stripes on the tan back, cream belly + socks, dark hooves, big head with curved banded horns, ears, teal crest, tufted teal tail. Nodes: Body (root) > Head (pivot at the neck (0, 0.93, -0.71) Godot), Tail (pivot at the tail root, swings about Y), Leg_FL / Leg_FR / Leg_BL / Leg_BR (pivots at the hips/shoulders, 0.65 m above the ground, whole leg + hoof as one mesh, swing about X). L = -X. Fixed colours (the game does not tint creatures; Fur_* / Skin_* / Shell_* / Horn / Hoof / Eye_* keep their colour). Front = -Z Godot (+Y Blender). Every joint is its own mesh node whose ORIGIN IS ON THE JOINT (rotation 0, scale 1, rest pose = neutral standing / flying), children of the root mesh. Joint names are exactly what scripts/world/fauna.gd looks up. Materials: Fur_Tan, Fur_Cream, Fur_Teal, Horn, Hoof, Skin_Nose, Eye_Dark, Eye_White. Origin = ground contact below the body centre."
+ },
+ "creature_flyer": {
+  "file": "creature_flyer.glb",
+  "category": "creature",
+  "tris": 1314,
+  "size": [
+   2.68,
+   0.62,
+   2.894
+  ],
+  "min": [
+   -1.34,
+   -0.18,
+   -1.12
+  ],
+  "max": [
+   1.34,
+   0.44,
+   1.773
+  ],
+  "nodes": [
+   "Body",
+   "Tail",
+   "Wing_L",
+   "Wing_R"
+  ],
+  "materials": [
+   "Skin_Back",
+   "Skin_Belly",
+   "Skin_Beak",
+   "Eye_Dark",
+   "Eye_White",
+   "Skin_Crest",
+   "Skin_Wing",
+   "Skin_WingUnder"
+  ],
+  "collision": {
+   "shape": "none"
+  },
+  "notes": "Pterosaur / manta glider, wingspan 2.7 m, ~2.9 m nose to tail fin: flat blue body, big eyes, yellow beak, swept-back orange head crest, long tail with an orange diamond fin and a small vertical fin, two broad cambered wings (blue top, peach underside, orange leading edge + tips, scalloped trailing edge, slight droop). Nodes: Body (root) > Wing_L (-X) / Wing_R (+X) (pivot at the wing root on the body side (+-0.22, 0.03, -0.04) Godot; the game flaps them by rotation.z = +-flap, wings extend outwards along +-X), Tail (optional, pivot at the tail root). Fixed colours (the game does not tint creatures; Fur_* / Skin_* / Shell_* / Horn / Hoof / Eye_* keep their colour). Front = -Z Godot (+Y Blender). Every joint is its own mesh node whose ORIGIN IS ON THE JOINT (rotation 0, scale 1, rest pose = neutral standing / flying), children of the root mesh. Joint names are exactly what scripts/world/fauna.gd looks up. Materials: Skin_Back, Skin_Belly, Skin_Wing, Skin_WingUnder, Skin_Crest, Skin_Beak, Eye_Dark, Eye_White. Origin = body centre (gliders: no collision)."
+ },
+ "creature_floater": {
+  "file": "creature_floater.glb",
+  "category": "creature",
+  "tris": 2166,
+  "size": [
+   3.35,
+   5.445,
+   3.35
+  ],
+  "min": [
+   -1.675,
+   -4.285,
+   -1.675
+  ],
+  "max": [
+   1.675,
+   1.16,
+   1.675
+  ],
+  "nodes": [
+   "Bell",
+   "Tentacle_01",
+   "Tentacle_02",
+   "Tentacle_03",
+   "Tentacle_04",
+   "Tentacle_05",
+   "Tentacle_06",
+   "Tentacle_07",
+   "Tentacle_08"
+  ],
+  "materials": [
+   "Skin_Bell",
+   "Glow_Main",
+   "Skin_Arm",
+   "Skin_Tentacle"
+  ],
+  "collision": {
+   "shape": "none"
+  },
+  "notes": "Jellyfish-like sky drifter: translucent lavender bell diameter ~3.2 m (Skin_Bell alpha 0.58, scalloped ruffled rim) with a glowing core + 8 radial glow canals (Glow_Main), 3 frilly pink oral arms (Skin_Arm, ~2.1 m) and 8 violet tentacles (Skin_Tentacle, 3.4 / 4.1 m long, glowing bands + tips + rim knobs in Glow_Main). Nodes: Bell (root mesh, pivot = bell centre = model origin; the game pulses its scale) > Tentacle_01 ... Tentacle_08 (children of Bell, pivot at the rim attachment point 1.4 m from the axis, 0.14 m below the bell centre; hang ~4 m down, the game sways them about X/Z). Fixed colours (the game does not tint creatures; Fur_* / Skin_* / Shell_* / Horn / Hoof / Eye_* keep their colour). Front = -Z Godot (+Y Blender). Every joint is its own mesh node whose ORIGIN IS ON THE JOINT (rotation 0, scale 1, rest pose = neutral standing / flying), children of the root mesh. Joint names are exactly what scripts/world/fauna.gd looks up. Glow_Main default colour baked into this GLB = cyan (#7FF2FF, emission 3.0); the game may tint it. Origin = bell centre; bell top +1.16 m, tentacle tips -4.3 m."
+ },
+ "creature_crawler": {
+  "file": "creature_crawler.glb",
+  "category": "creature",
+  "tris": 1960,
+  "size": [
+   0.989,
+   0.548,
+   1.213
+  ],
+  "min": [
+   -0.495,
+   0.0,
+   -0.802
+  ],
+  "max": [
+   0.495,
+   0.548,
+   0.411
+  ],
+  "nodes": [
+   "Body",
+   "Leg_1",
+   "Leg_2",
+   "Leg_3",
+   "Leg_4",
+   "Leg_5",
+   "Leg_6"
+  ],
+  "materials": [
+   "Shell_Main",
+   "Shell_Dark",
+   "Shell_Light",
+   "Skin_Under",
+   "Glow_Main",
+   "Eye_White",
+   "Eye_Dark"
+  ],
+  "collision": {
+   "shape": "box",
+   "size": [
+    0.89,
+    0.45,
+    1.11
+   ],
+   "offset": [
+    0.0,
+    0.27,
+    -0.2
+   ]
+  },
+  "notes": "Beetle / crab ~0.95 m wide: rust-red domed carapace (Shell_Main, dark rim Shell_Dark, light rear plate Shell_Light) with 8 glowing spots (Glow_Main), dark head shield, two eye stalks with big eyes, two small pincers, six legs. Nodes: Body (root) > Leg_1 ... Leg_6 (pivots at the hips 0.19 m above the ground; 1/3/5 = left (-X) front to back, 2/4/6 = right; swing about X). Fixed colours (the game does not tint creatures; Fur_* / Skin_* / Shell_* / Horn / Hoof / Eye_* keep their colour). Front = -Z Godot (+Y Blender). Every joint is its own mesh node whose ORIGIN IS ON THE JOINT (rotation 0, scale 1, rest pose = neutral standing / flying), children of the root mesh. Joint names are exactly what scripts/world/fauna.gd looks up. Glow_Main default colour baked into this GLB = aqua green (#46FFC8, emission 3.0); the game may tint it. Materials: Shell_Main/Dark/Light, Skin_Under, Eye_Dark, Eye_White. Origin = ground contact below the body centre."
+ },
+ "asteroid_a": {
+  "file": "asteroid_a.glb",
+  "category": "space",
+  "tris": 1050,
+  "size": [
+   33.421,
+   15.308,
+   17.438
+  ],
+  "min": [
+   -16.787,
+   -7.161,
+   -8.756
+  ],
+  "max": [
+   16.635,
+   8.148,
+   8.682
+  ],
+  "nodes": [
+   "Body"
+  ],
+  "materials": [
+   "Rock_A",
+   "Rock_B"
+  ],
+  "collision": {
+   "shape": "none"
+  },
+  "notes": "Elongated bent potato ~33 x 17 x 15 m: long ridge along the top, a big gouge crater and 6 smaller craters, slight neck pinch in the middle. Real size (game scales x0.35 - 1.9 and spins them). Flat shaded Rock_A (main) + Rock_B (crater floors / noise patches), both recoloured by the game's rock tint. Cube-sphere base displaced by noise + craters, plus 3 half-buried chunks. Origin = centre of the rock. Single mesh node 'Body'. No collision (the game handles proximity itself)."
+ },
+ "asteroid_b": {
+  "file": "asteroid_b.glb",
+  "category": "space",
+  "tris": 1050,
+  "size": [
+   29.409,
+   28.729,
+   30.333
+  ],
+  "min": [
+   -15.276,
+   -14.531,
+   -15.709
+  ],
+  "max": [
+   14.133,
+   14.198,
+   14.623
+  ],
+  "nodes": [
+   "Body"
+  ],
+  "materials": [
+   "Rock_A",
+   "Rock_B"
+  ],
+  "collision": {
+   "shape": "none"
+  },
+  "notes": "Round pitted rock ~29 m: 15 craters of various sizes (two big ones) with raised rims. Real size (game scales x0.35 - 1.9 and spins them). Flat shaded Rock_A (main) + Rock_B (crater floors / noise patches), both recoloured by the game's rock tint. Cube-sphere base displaced by noise + craters, plus 3 half-buried chunks. Origin = centre of the rock. Single mesh node 'Body'. No collision (the game handles proximity itself)."
+ },
+ "asteroid_c": {
+  "file": "asteroid_c.glb",
+  "category": "space",
+  "tris": 1048,
+  "size": [
+   32.295,
+   22.063,
+   20.822
+  ],
+  "min": [
+   -17.878,
+   -10.76,
+   -10.419
+  ],
+  "max": [
+   14.417,
+   11.303,
+   10.403
+  ],
+  "nodes": [
+   "Body"
+  ],
+  "materials": [
+   "Rock_A",
+   "Rock_B"
+  ],
+  "collision": {
+   "shape": "none"
+  },
+  "notes": "Two-lobed rock ~32 x 21 x 22 m (lobes 22 m and 18 m) with a deep crack ring between the lobes, three flat fracture facets and 5 craters. Real size (game scales x0.35 - 1.9 and spins them). Flat shaded Rock_A (main) + Rock_B (crater floors / noise patches), both recoloured by the game's rock tint. Cube-sphere base displaced by noise + craters, plus 3 half-buried chunks. Origin = centre of the rock. Single mesh node 'Body'. No collision (the game handles proximity itself)."
+ },
+ "satellite": {
+  "file": "satellite.glb",
+  "category": "space",
+  "tris": 1782,
+  "size": [
+   9.483,
+   7.02,
+   4.813
+  ],
+  "min": [
+   -4.393,
+   -1.96,
+   -2.606
+  ],
+  "max": [
+   5.09,
+   5.06,
+   2.206
+  ],
+  "nodes": [
+   "Body"
+  ],
+  "materials": [
+   "Foil_Gold",
+   "Hull_Paint",
+   "Hull_Dark",
+   "Scorch",
+   "Metal",
+   "Emissive_NavRed",
+   "Solar_Cell",
+   "Solar_Grid"
+  ],
+  "collision": {
+   "shape": "none"
+  },
+  "notes": "Derelict comms satellite ~9.5 m wide x 7 m tall x 4.8 m deep (incl. whip antenna): gold-foil bus 1.6 x 1.6 x 1.7 m with white top module + dark thruster module + scorch marks, big dented dish (2.6 m) on a mast with feed arms, small side dish, whip antennas (one bent), two solar wings (left: flat + bent panel, right: flat + torn stub), loose cable, thruster nozzle, one dim red nav lamp (Emissive_NavRed). Materials: Foil_Gold, Scorch, Hull_Paint, Hull_Dark, Metal, Solar_Cell, Solar_Grid, Emissive_NavRed (fixed colours, nothing tinted). Origin = centre of the bus (the game spins it about a random axis). Single mesh node 'Body'. No collision."
+ }
+}

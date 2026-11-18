@@ -1,0 +1,872 @@
+{
+  "group": "flora2",
+  "models": [
+    {
+      "id": "rock_sandstone_b",
+      "file": "rock_sandstone_b.glb",
+      "kind": "rock",
+      "biomes": [
+        "desert"
+      ],
+      "size": [
+        2.648,
+        3.289,
+        2.612
+      ],
+      "base_y": 0.0,
+      "collider": {
+        "shape": "cylinder",
+        "radius": 0.75,
+        "height": 3.0,
+        "offset_y": 0.0,
+        "center_y": 1.5
+      },
+      "tris": 2985,
+      "tintable": [
+        "rust",
+        "orange",
+        "ochre",
+        "cream",
+        "sand",
+        "cap"
+      ],
+      "notes": "Sandstone hoodoo (mushroom rock) ~3 m tall, ~2.3 m cap width, leans slightly toward +X. Origin at ground centre of the stem."
+    },
+    {
+      "id": "tree_frost_a",
+      "file": "tree_frost_a.glb",
+      "kind": "flora",
+      "biomes": [
+        "frozen"
+      ],
+      "size": [
+        5.322,
+        9.95,
+        5.393
+      ],
+      "base_y": 0.0,
+      "collider": {
+        "shape": "cylinder",
+        "radius": 0.45,
+        "height": 5.0,
+        "offset_y": 0.0,
+        "center_y": 2.5
+      },
+      "tris": 4546,
+      "tintable": [
+        "needle"
+      ],
+      "notes": "Snow-laden conifer 9.95 m tall incl. leader (trunk to 9.2 m), 11 drooping tiers (radius up to ~2.7 m at the bottom tier, canopy starts ~1.4 m above ground). Materials: trunk, needle (tintable dark teal), snow (white caps). Collider = trunk only."
+    },
+    {
+      "id": "rock_moon_b",
+      "file": "rock_moon_b.glb",
+      "kind": "rock",
+      "biomes": [
+        "barren"
+      ],
+      "size": [
+        2.261,
+        1.101,
+        2.133
+      ],
+      "base_y": 0.0,
+      "collider": {
+        "shape": "cylinder",
+        "radius": 0.95,
+        "height": 1.2,
+        "offset_y": 0.0,
+        "center_y": 0.6
+      },
+      "tris": 1200,
+      "tintable": [
+        "rock",
+        "dust"
+      ],
+      "notes": "Rounded cratered boulder ~2 m wide / 1.3 m tall with 4 pebbles. Origin ground centre."
+    },
+    {
+      "id": "spire_regolith_a",
+      "file": "spire_regolith_a.glb",
+      "kind": "rock",
+      "biomes": [
+        "barren"
+      ],
+      "size": [
+        6.429,
+        7.225,
+        5.405
+      ],
+      "base_y": 0.0,
+      "collider": {
+        "shape": "cylinder",
+        "radius": 1.5,
+        "height": 7.0,
+        "offset_y": 0.0,
+        "center_y": 3.5
+      },
+      "tris": 1743,
+      "tintable": [
+        "rock",
+        "dust"
+      ],
+      "notes": "Jagged faceted spire cluster, main shard ~7 m (leans toward +X/+Y by ~1 m), 4 smaller shards, debris. Dust on up-facing facets, pale ore streaks. Origin ground centre of the main shard."
+    },
+    {
+      "id": "cactus_a",
+      "file": "cactus_a.glb",
+      "kind": "flora",
+      "biomes": [
+        "desert"
+      ],
+      "size": [
+        2.249,
+        4.006,
+        1.455
+      ],
+      "base_y": 0.0,
+      "collider": {
+        "shape": "cylinder",
+        "radius": 0.32,
+        "height": 3.9,
+        "offset_y": 0.0,
+        "center_y": 1.95
+      },
+      "tris": 4399,
+      "tintable": [
+        "skin",
+        "flower"
+      ],
+      "notes": "Saguaro-style ribbed cactus, 2 arms. Origin at ground (bottom-centre of trunk). Materials: skin (green), spine (cream needles, two-sided, backface culling on), flower (emissive pink). Collider offset_y = bottom of collider; center_y = collider centre (Godot axes)."
+    },
+    {
+      "id": "cactus_b",
+      "file": "cactus_b.glb",
+      "kind": "flora",
+      "biomes": [
+        "desert"
+      ],
+      "size": [
+        1.679,
+        1.25,
+        1.427
+      ],
+      "base_y": 0.0,
+      "collider": {
+        "shape": "cylinder",
+        "radius": 0.7,
+        "height": 0.95,
+        "offset_y": 0.0,
+        "center_y": 0.475
+      },
+      "tris": 2373,
+      "tintable": [
+        "skin",
+        "flower"
+      ],
+      "notes": "Barrel-cactus cluster: central barrel, 4 pups and a short branching column. Origin at ground centre of the main barrel. Materials: skin, spine (two-sided needles), flower (emissive golden-yellow)."
+    },
+    {
+      "id": "shrub_dry_a",
+      "file": "shrub_dry_a.glb",
+      "kind": "flora",
+      "biomes": [
+        "desert",
+        "barren"
+      ],
+      "size": [
+        1.115,
+        0.803,
+        1.164
+      ],
+      "base_y": 0.0,
+      "collider": {
+        "shape": "cylinder",
+        "radius": 0.35,
+        "height": 0.7,
+        "offset_y": 0.0,
+        "center_y": 0.35
+      },
+      "tris": 2944,
+      "tintable": [
+        "leaf"
+      ],
+      "notes": "Dry twiggy shrub, ~1 m wide mound. Origin at ground. Leaves are single-sided quads on a double-sided material (cull off). Materials: twig (grey-brown wood), leaf (sage), leaf_dry (straw). Cheap enough for MultiMesh scatter."
+    },
+    {
+      "id": "tree_frost_b",
+      "file": "tree_frost_b.glb",
+      "kind": "flora",
+      "biomes": [
+        "frozen"
+      ],
+      "size": [
+        4.208,
+        7.164,
+        4.187
+      ],
+      "base_y": 0.0,
+      "collider": {
+        "shape": "cylinder",
+        "radius": 0.324,
+        "height": 3.6,
+        "offset_y": 0.0,
+        "center_y": 1.8
+      },
+      "tris": 4546,
+      "tintable": [
+        "needle"
+      ],
+      "notes": "VARIANT of tree_frost_a (seed=2024, scale=0.72, mirror=False). Snow-laden conifer 9.95 m tall incl. leader (trunk to 9.2 m), 11 drooping tiers (radius up to ~2.7 m at the bottom tier, canopy starts ~1.4 m above ground). Materials: trunk, needle (tintable dark teal), snow (white caps). Collider = trunk only.",
+      "variant_of": "tree_frost_a"
+    },
+    {
+      "id": "tree_frost_c",
+      "file": "tree_frost_c.glb",
+      "kind": "flora",
+      "biomes": [
+        "frozen"
+      ],
+      "size": [
+        2.913,
+        5.472,
+        2.958
+      ],
+      "base_y": 0.0,
+      "collider": {
+        "shape": "cylinder",
+        "radius": 0.248,
+        "height": 2.75,
+        "offset_y": 0.0,
+        "center_y": 1.375
+      },
+      "tris": 4546,
+      "tintable": [
+        "needle"
+      ],
+      "notes": "VARIANT of tree_frost_a (seed=31, scale=0.55, mirror=True). Snow-laden conifer 9.95 m tall incl. leader (trunk to 9.2 m), 11 drooping tiers (radius up to ~2.7 m at the bottom tier, canopy starts ~1.4 m above ground). Materials: trunk, needle (tintable dark teal), snow (white caps). Collider = trunk only.",
+      "variant_of": "tree_frost_a"
+    },
+    {
+      "id": "cactus_c",
+      "file": "cactus_c.glb",
+      "kind": "flora",
+      "biomes": [
+        "desert"
+      ],
+      "size": [
+        1.551,
+        2.805,
+        1.019
+      ],
+      "base_y": 0.0,
+      "collider": {
+        "shape": "cylinder",
+        "radius": 0.224,
+        "height": 2.73,
+        "offset_y": 0.0,
+        "center_y": 1.365
+      },
+      "tris": 4399,
+      "tintable": [
+        "skin",
+        "flower"
+      ],
+      "notes": "VARIANT of cactus_a (seed=23, scale=0.7, mirror=True). Saguaro-style ribbed cactus, 2 arms. Origin at ground (bottom-centre of trunk). Materials: skin (green), spine (cream needles, two-sided, backface culling on), flower (emissive pink). Collider offset_y = bottom of collider; center_y = collider centre (Godot axes).",
+      "variant_of": "cactus_a"
+    },
+    {
+      "id": "rock_moon_d",
+      "file": "rock_moon_d.glb",
+      "kind": "rock",
+      "biomes": [
+        "barren"
+      ],
+      "size": [
+        1.297,
+        0.6,
+        1.15
+      ],
+      "base_y": 0.0,
+      "collider": {
+        "shape": "cylinder",
+        "radius": 0.522,
+        "height": 0.66,
+        "offset_y": 0.0,
+        "center_y": 0.33
+      },
+      "tris": 1239,
+      "tintable": [
+        "rock",
+        "dust"
+      ],
+      "notes": "VARIANT of rock_moon_b (seed=8303, scale=0.55, mirror=False). Rounded cratered boulder ~2 m wide / 1.3 m tall with 4 pebbles. Origin ground centre.",
+      "variant_of": "rock_moon_b"
+    },
+    {
+      "id": "shrub_dry_b",
+      "file": "shrub_dry_b.glb",
+      "kind": "flora",
+      "biomes": [
+        "desert",
+        "barren"
+      ],
+      "size": [
+        0.819,
+        0.66,
+        0.76
+      ],
+      "base_y": 0.0,
+      "collider": {
+        "shape": "cylinder",
+        "radius": 0.28,
+        "height": 0.56,
+        "offset_y": 0.0,
+        "center_y": 0.28
+      },
+      "tris": 2944,
+      "tintable": [
+        "leaf"
+      ],
+      "notes": "VARIANT of shrub_dry_a (seed=41, scale=0.8, mirror=False). Dry twiggy shrub, ~1 m wide mound. Origin at ground. Leaves are single-sided quads on a double-sided material (cull off). Materials: twig (grey-brown wood), leaf (sage), leaf_dry (straw). Cheap enough for MultiMesh scatter.",
+      "variant_of": "shrub_dry_a"
+    },
+    {
+      "id": "spire_regolith_b",
+      "file": "spire_regolith_b.glb",
+      "kind": "rock",
+      "biomes": [
+        "barren"
+      ],
+      "size": [
+        3.695,
+        4.344,
+        3.472
+      ],
+      "base_y": 0.0,
+      "collider": {
+        "shape": "cylinder",
+        "radius": 0.9,
+        "height": 4.2,
+        "offset_y": 0.0,
+        "center_y": 2.1
+      },
+      "tris": 1739,
+      "tintable": [
+        "rock",
+        "dust"
+      ],
+      "notes": "VARIANT of spire_regolith_a (seed=7101, scale=0.6, mirror=True). Jagged faceted spire cluster, main shard ~7 m (leans toward +X/+Y by ~1 m), 4 smaller shards, debris. Dust on up-facing facets, pale ore streaks. Origin ground centre of the main shard.",
+      "variant_of": "spire_regolith_a"
+    },
+    {
+      "id": "dune_grass_a",
+      "file": "dune_grass_a.glb",
+      "kind": "flora",
+      "biomes": [
+        "desert"
+      ],
+      "size": [
+        0.917,
+        0.829,
+        0.84
+      ],
+      "base_y": 0.0,
+      "collider": {
+        "shape": "none"
+      },
+      "tris": 204,
+      "tintable": [
+        "blade"
+      ],
+      "notes": "Sparse dry grass tuft ~0.8 m: 15 broad two-sided blades (twisted, arching outward) + 3 seed stalks with seed heads (materials have backface culling ON; both sides modelled). Origin at ground. No collider. Cheap enough for dense MultiMesh scatter."
+    },
+    {
+      "id": "boulder_big_a",
+      "file": "boulder_big_a.glb",
+      "kind": "rock",
+      "biomes": [
+        "any",
+        "barren",
+        "desert",
+        "frozen"
+      ],
+      "size": [
+        9.776,
+        6.501,
+        7.62
+      ],
+      "base_y": 0.0,
+      "collider": {
+        "shape": "cylinder",
+        "radius": 3.8,
+        "height": 6.0,
+        "offset_y": 0.0,
+        "center_y": 3.0
+      },
+      "tris": 4130,
+      "tintable": [
+        "rock",
+        "lichen"
+      ],
+      "notes": "~9 m wide x ~6.5 m tall landmark boulder: cleaved into two halves with a dark fissure, a balanced capstone bridging the cleft, 5 flanking blocks + rubble. Slots rock, rock_dark (undersides + fissure), lichen (tintable, up-facing patches), rock_light (strata bands). Origin ground centre."
+    },
+    {
+      "id": "dune_grass_b",
+      "file": "dune_grass_b.glb",
+      "kind": "flora",
+      "biomes": [
+        "desert"
+      ],
+      "size": [
+        0.616,
+        0.683,
+        0.797
+      ],
+      "base_y": 0.0,
+      "collider": {
+        "shape": "none"
+      },
+      "tris": 204,
+      "tintable": [
+        "blade"
+      ],
+      "notes": "VARIANT of dune_grass_a (seed=5, scale=0.8, mirror=False). Sparse dry grass tuft ~0.8 m: 15 broad two-sided blades (twisted, arching outward) + 3 seed stalks with seed heads (materials have backface culling ON; both sides modelled). Origin at ground. No collider. Cheap enough for dense MultiMesh scatter.",
+      "variant_of": "dune_grass_a"
+    },
+    {
+      "id": "bones_a",
+      "file": "bones_a.glb",
+      "kind": "prop",
+      "biomes": [
+        "desert",
+        "barren"
+      ],
+      "size": [
+        5.046,
+        2.603,
+        6.479
+      ],
+      "base_y": 0.0,
+      "collider": {
+        "shape": "none"
+      },
+      "tris": 4984,
+      "tintable": [],
+      "notes": "Alien skeleton ~6.5 m long (along Y; skull toward +Y = Godot -Z), ~5 m wide incl. fallen rib, rib arches ~2.7 m tall (walk-under). Origin at ground, centre of the rib cage. No collider (QA decision): the ribs are thin and the player is meant to walk under/through the rib cage; a solid bounding box would wall it off. If a collider is wanted, use a small cylinder at the skull (the -Z end) only."
+    },
+    {
+      "id": "rock_moon_c",
+      "file": "rock_moon_c.glb",
+      "kind": "rock",
+      "biomes": [
+        "barren"
+      ],
+      "size": [
+        4.437,
+        1.412,
+        3.103
+      ],
+      "base_y": 0.0,
+      "collider": {
+        "shape": "box",
+        "size": [
+          3.6,
+          1.3,
+          2.0
+        ],
+        "offset_y": 0.0,
+        "center_y": 0.65
+      },
+      "tris": 2269,
+      "tintable": [
+        "rock",
+        "dust"
+      ],
+      "notes": "Long slab outcrop ~4.4 m x 3.1 m x 1.4 m (long axis = X), leaning ledge on the +Y side, craters, pale mineral banding. Origin ground centre."
+    },
+    {
+      "id": "rock_moon_a",
+      "file": "rock_moon_a.glb",
+      "kind": "rock",
+      "biomes": [
+        "barren"
+      ],
+      "size": [
+        3.805,
+        1.824,
+        2.035
+      ],
+      "base_y": 0.0,
+      "collider": {
+        "shape": "cylinder",
+        "radius": 1.3,
+        "height": 1.8,
+        "offset_y": 0.0,
+        "center_y": 0.9
+      },
+      "tris": 1579,
+      "tintable": [
+        "rock",
+        "dust"
+      ],
+      "notes": "Angular grey moon rock ~3 m wide / 2.2 m tall (chiselled facets, two craters, pale mineral vein, dust on top facets) + 2 chunks. Origin ground centre."
+    },
+    {
+      "id": "rock_moon_e",
+      "file": "rock_moon_e.glb",
+      "kind": "rock",
+      "biomes": [
+        "barren"
+      ],
+      "size": [
+        2.279,
+        1.082,
+        1.019
+      ],
+      "base_y": 0.0,
+      "collider": {
+        "shape": "cylinder",
+        "radius": 0.78,
+        "height": 1.08,
+        "offset_y": 0.0,
+        "center_y": 0.54
+      },
+      "tris": 1542,
+      "tintable": [
+        "rock",
+        "dust"
+      ],
+      "notes": "VARIANT of rock_moon_a (seed=8404, scale=0.6, mirror=True). Angular grey moon rock ~3 m wide / 2.2 m tall (chiselled facets, two craters, pale mineral vein, dust on top facets) + 2 chunks. Origin ground centre.",
+      "variant_of": "rock_moon_a"
+    },
+    {
+      "id": "ice_crystal_a",
+      "file": "ice_crystal_a.glb",
+      "kind": "flora",
+      "biomes": [
+        "frozen"
+      ],
+      "size": [
+        2.805,
+        3.043,
+        2.672
+      ],
+      "base_y": 0.0,
+      "collider": {
+        "shape": "cylinder",
+        "radius": 0.9,
+        "height": 3.0,
+        "offset_y": 0.0,
+        "center_y": 1.5
+      },
+      "tris": 1028,
+      "tintable": [
+        "ice",
+        "core"
+      ],
+      "notes": "Cluster of translucent (alpha 0.5, BLEND) hexagonal ice crystals with emissive cyan inner cores (slot core) and a snowy base with rocks. Origin at ground centre. ice shell emission strength 2.0 (exported glTF strength 2.0, halved on screen by alpha 0.5); core 5.0. ~3.1 m hero crystal."
+    },
+    {
+      "id": "mesa_rock_a",
+      "file": "mesa_rock_a.glb",
+      "kind": "rock",
+      "biomes": [
+        "desert"
+      ],
+      "size": [
+        21.476,
+        18.726,
+        19.002
+      ],
+      "base_y": 0.0,
+      "collider": {
+        "shape": "cylinder",
+        "radius": 5.2,
+        "height": 18.0,
+        "offset_y": 0.0,
+        "center_y": 9.0
+      },
+      "tris": 6327,
+      "tintable": [
+        "rust",
+        "orange",
+        "ochre",
+        "cream",
+        "sand"
+      ],
+      "notes": "Layered butte landmark ~18 m tall (main cliff radius ~4.3 m, talus skirt radius ~7.5 m + loose boulders out to ~10 m) with a 10 m satellite pillar at +X/-Y. Origin at ground centre of the main butte. Collider approximates the main cliff only."
+    },
+    {
+      "id": "ice_crystal_b",
+      "file": "ice_crystal_b.glb",
+      "kind": "flora",
+      "biomes": [
+        "frozen"
+      ],
+      "size": [
+        1.557,
+        1.673,
+        1.287
+      ],
+      "base_y": 0.0,
+      "collider": {
+        "shape": "cylinder",
+        "radius": 0.495,
+        "height": 1.65,
+        "offset_y": 0.0,
+        "center_y": 0.825
+      },
+      "tris": 1009,
+      "tintable": [
+        "ice",
+        "core"
+      ],
+      "notes": "VARIANT of ice_crystal_a (seed=12, scale=0.55, mirror=False). Cluster of translucent (alpha 0.5, BLEND) hexagonal ice crystals with emissive cyan inner cores (slot core) and a snowy base with rocks. Origin at ground centre. ice shell emission strength 2.0 (exported glTF strength 2.0, halved on screen by alpha 0.5); core 5.0. ~3.1 m hero crystal.",
+      "variant_of": "ice_crystal_a"
+    },
+    {
+      "id": "ice_spike_a",
+      "file": "ice_spike_a.glb",
+      "kind": "flora",
+      "biomes": [
+        "frozen"
+      ],
+      "size": [
+        5.433,
+        5.365,
+        5.519
+      ],
+      "base_y": 0.0,
+      "collider": {
+        "shape": "cylinder",
+        "radius": 1.3,
+        "height": 4.0,
+        "offset_y": 0.0,
+        "center_y": 2.0
+      },
+      "tris": 1576,
+      "tintable": [
+        "ice",
+        "deep"
+      ],
+      "notes": "Cluster of tall faceted ice spikes (hero spire 5.2 m) with stepped ledges, deep-blue lower sections (slot deep, emissive strength 2.0 = the glow; slot ice is not emissive), snow drift and rocks at the base. Opaque, flat shaded. Origin at ground centre."
+    },
+    {
+      "id": "icicle_arch_a",
+      "file": "icicle_arch_a.glb",
+      "kind": "structure",
+      "biomes": [
+        "frozen"
+      ],
+      "size": [
+        12.263,
+        7.304,
+        4.06
+      ],
+      "base_y": 0.0,
+      "collider": {
+        "shape": "none"
+      },
+      "tris": 2882,
+      "tintable": [
+        "ice",
+        "deep"
+      ],
+      "notes": "Natural ice arch, 12.3 m overall width (X, incl. foot crystals; 7.8 m between leg centres), ~7.3 m tall, ~4 m deep (Z in Godot). Walk-under opening ~5 m wide x ~4.5 m high: do NOT use a single collider; legs are at x = +-3.9 m (radius ~1.7 m) if you want two cylinder colliders. Hanging icicles, snow cap, snow drifts at the feet. Origin: ground centre between the legs. Slot deep (lower leg veins) is emissive strength 2.0; slot ice is not emissive."
+    },
+    {
+      "id": "ice_spike_b",
+      "file": "ice_spike_b.glb",
+      "kind": "flora",
+      "biomes": [
+        "frozen"
+      ],
+      "size": [
+        3.008,
+        2.943,
+        3.096
+      ],
+      "base_y": 0.0,
+      "collider": {
+        "shape": "cylinder",
+        "radius": 0.715,
+        "height": 2.2,
+        "offset_y": 0.0,
+        "center_y": 1.1
+      },
+      "tris": 1572,
+      "tintable": [
+        "ice",
+        "deep"
+      ],
+      "notes": "VARIANT of ice_spike_a (seed=5, scale=0.55, mirror=False). Cluster of tall faceted ice spikes (hero spire 5.2 m) with stepped ledges, deep-blue lower sections (slot deep, emissive strength 2.0 = the glow; slot ice is not emissive), snow drift and rocks at the base. Opaque, flat shaded. Origin at ground centre.",
+      "variant_of": "ice_spike_a"
+    },
+    {
+      "id": "dead_tree_a",
+      "file": "dead_tree_a.glb",
+      "kind": "flora",
+      "biomes": [
+        "desert",
+        "barren"
+      ],
+      "size": [
+        4.181,
+        4.676,
+        2.545
+      ],
+      "base_y": 0.0,
+      "collider": {
+        "shape": "cylinder",
+        "radius": 0.5,
+        "height": 2.2,
+        "offset_y": 0.0,
+        "center_y": 1.1
+      },
+      "tris": 1992,
+      "tintable": [],
+      "notes": "Bleached dead tree ~5 m, twisting trunk with 4 buttress roots, 3 forking limbs, broken stubs (dark cut ends = slot wood_dark), bark patches. Collider = trunk only (limbs are thin)."
+    },
+    {
+      "id": "dead_tree_b",
+      "file": "dead_tree_b.glb",
+      "kind": "flora",
+      "biomes": [
+        "desert",
+        "barren"
+      ],
+      "size": [
+        2.583,
+        4.002,
+        2.128
+      ],
+      "base_y": 0.0,
+      "collider": {
+        "shape": "cylinder",
+        "radius": 0.41,
+        "height": 1.804,
+        "offset_y": 0.0,
+        "center_y": 0.902
+      },
+      "tris": 1997,
+      "tintable": [],
+      "notes": "VARIANT of dead_tree_a (seed=88, scale=0.82, mirror=True). Bleached dead tree ~5 m, twisting trunk with 4 buttress roots, 3 forking limbs, broken stubs (dark cut ends = slot wood_dark), bark patches. Collider = trunk only (limbs are thin).",
+      "variant_of": "dead_tree_a"
+    },
+    {
+      "id": "rock_snow_a",
+      "file": "rock_snow_a.glb",
+      "kind": "rock",
+      "biomes": [
+        "frozen"
+      ],
+      "size": [
+        3.343,
+        1.509,
+        2.951
+      ],
+      "base_y": 0.0,
+      "collider": {
+        "shape": "cylinder",
+        "radius": 1.2,
+        "height": 1.4,
+        "offset_y": 0.0,
+        "center_y": 0.7
+      },
+      "tris": 2987,
+      "tintable": [
+        "rock"
+      ],
+      "notes": "Slate-blue boulder with a ragged snow cap (slot snow) on up-facing faces, 3 satellite rocks and low lumpy snow banks overlapping the base. Origin at ground centre."
+    },
+    {
+      "id": "rock_sandstone_a",
+      "file": "rock_sandstone_a.glb",
+      "kind": "rock",
+      "biomes": [
+        "desert"
+      ],
+      "size": [
+        3.822,
+        2.605,
+        3.432
+      ],
+      "base_y": 0.0,
+      "collider": {
+        "shape": "cylinder",
+        "radius": 1.25,
+        "height": 2.2,
+        "offset_y": 0.0,
+        "center_y": 1.1
+      },
+      "tris": 2640,
+      "tintable": [
+        "rust",
+        "orange",
+        "ochre",
+        "cream",
+        "sand"
+      ],
+      "notes": "Layered sandstone boulder ~2.5 m wide/2.5 m tall, origin at ground centre. Strata are separate material slots (rust..cream + sand talus)."
+    },
+    {
+      "id": "rock_sandstone_c",
+      "file": "rock_sandstone_c.glb",
+      "kind": "rock",
+      "biomes": [
+        "desert"
+      ],
+      "size": [
+        2.781,
+        2.068,
+        2.733
+      ],
+      "base_y": 0.0,
+      "collider": {
+        "shape": "cylinder",
+        "radius": 1.0,
+        "height": 1.76,
+        "offset_y": 0.0,
+        "center_y": 0.88
+      },
+      "tris": 2643,
+      "tintable": [
+        "rust",
+        "orange",
+        "ochre",
+        "cream",
+        "sand"
+      ],
+      "notes": "VARIANT of rock_sandstone_a (seed=55, scale=0.8, mirror=True). Layered sandstone boulder ~2.5 m wide/2.5 m tall, origin at ground centre. Strata are separate material slots (rust..cream + sand talus).",
+      "variant_of": "rock_sandstone_a"
+    },
+    {
+      "id": "rock_snow_b",
+      "file": "rock_snow_b.glb",
+      "kind": "rock",
+      "biomes": [
+        "frozen"
+      ],
+      "size": [
+        2.052,
+        0.98,
+        1.797
+      ],
+      "base_y": 0.0,
+      "collider": {
+        "shape": "cylinder",
+        "radius": 0.744,
+        "height": 0.868,
+        "offset_y": 0.0,
+        "center_y": 0.434
+      },
+      "tris": 2946,
+      "tintable": [
+        "rock"
+      ],
+      "notes": "VARIANT of rock_snow_a (seed=707, scale=0.62, mirror=True). Slate-blue boulder with a ragged snow cap (slot snow) on up-facing faces, 3 satellite rocks and low lumpy snow banks overlapping the base. Origin at ground centre.",
+      "variant_of": "rock_snow_a"
+    }
+  ]
+}

@@ -1,0 +1,1125 @@
+{
+  "group": "structures",
+  "models": [
+    {
+      "id": "beacon_monolith_a",
+      "file": "beacon_monolith_a.glb",
+      "kind": "structure",
+      "biomes": [
+        "any"
+      ],
+      "size": [
+        13.111,
+        8.542,
+        12.132
+      ],
+      "base_y": -0.8,
+      "aabb_center": [
+        0.166,
+        3.471,
+        -0.021
+      ],
+      "collider": {
+        "shape": "box",
+        "size": [
+          6.5,
+          1.1,
+          6.5
+        ],
+        "offset_y": -0.8,
+        "center": [
+          0,
+          -0.25,
+          0
+        ]
+      },
+      "tris": 6046,
+      "notes": "Ancient obelisk ~7.4 m with emissive teal glyph ribbons (material *_glow, emission 5.5) on all 4 faces; main glyph face = Blender +Y (Godot -Z) with a circle motif, back face has a dial. Ring_Outer / Ring_Inner are separate objects with the origin at the ring centre (y=5.0 / 3.0 in Godot), tilted a few degrees; spin them about their local Y (Godot). Shards = static floating crystals. Plinth sinks 0.8 m below y=0. Anchor_Door = stand point on the front of the plinth, Anchor_Top above the tip.",
+      "colliders": [
+        {
+          "shape": "box",
+          "size": [
+            6.5,
+            1.1,
+            6.5
+          ],
+          "offset_y": -0.8,
+          "center": [
+            0,
+            -0.25,
+            0
+          ],
+          "note": "plinth"
+        },
+        {
+          "shape": "box",
+          "size": [
+            2.0,
+            7.2,
+            1.4
+          ],
+          "offset_y": 0.3,
+          "center": [
+            0,
+            3.9,
+            0
+          ],
+          "note": "shaft"
+        }
+      ],
+      "nodes": {
+        "rings": [
+          "Ring_Outer",
+          "Ring_Inner"
+        ],
+        "meshes": [
+          "Monolith",
+          "Shards"
+        ],
+        "anchors": [
+          "Anchor_Door",
+          "Anchor_Top"
+        ]
+      }
+    },
+    {
+      "id": "comm_dish_a",
+      "file": "comm_dish_a.glb",
+      "kind": "structure",
+      "biomes": [
+        "any"
+      ],
+      "size": [
+        15.25,
+        9.613,
+        9.8
+      ],
+      "base_y": -0.5,
+      "aabb_center": [
+        0.0,
+        4.307,
+        -0.0
+      ],
+      "collider": {
+        "shape": "box",
+        "size": [
+          15.2,
+          1.1,
+          9.8
+        ],
+        "offset_y": -0.5,
+        "center": [
+          0,
+          0.05,
+          0
+        ]
+      },
+      "tris": 7384,
+      "notes": "Ground antenna station: 6 m dish on a pedestal + control hut (-X side) + generator (+X). Hierarchy Base > Dish_Az > Dish_El. `Dish_Az` origin = top of the pedestal: rotate about local Y (Godot) = azimuth. `Dish_El` (child of Dish_Az) origin = the trunnion axis: rotate about local X for elevation; exported rest pose = elevation +40 deg (rotation.x = +40 deg, dish opens toward Blender +Y = Godot -Z). BlinkLight (red emissive, own material *_blink) on the hut mast. Anchor_Door in front of the hut door. Slab sinks to y=-0.5.",
+      "colliders": [
+        {
+          "shape": "cylinder",
+          "radius": 2.0,
+          "height": 2.4,
+          "offset_y": 0.3,
+          "center": [
+            0,
+            1.5,
+            0
+          ],
+          "note": "pedestal"
+        },
+        {
+          "shape": "box",
+          "size": [
+            3.6,
+            2.7,
+            2.8
+          ],
+          "offset_y": 0.33,
+          "center": [
+            -5.2,
+            1.7,
+            -0.4
+          ],
+          "note": "hut"
+        },
+        {
+          "shape": "box",
+          "size": [
+            2.6,
+            1.6,
+            1.5
+          ],
+          "offset_y": 0.33,
+          "center": [
+            5.4,
+            1.1,
+            -1.4
+          ],
+          "note": "generator"
+        }
+      ],
+      "tintable": [
+        "accent"
+      ],
+      "nodes": {
+        "dish_az": [
+          "Dish_Az"
+        ],
+        "dish_el": [
+          "Dish_El"
+        ],
+        "blink": [
+          "BlinkLight"
+        ],
+        "meshes": [
+          "Base"
+        ],
+        "anchors": [
+          "Anchor_Door",
+          "Anchor_Top"
+        ]
+      }
+    },
+    {
+      "id": "crashed_ship_a",
+      "file": "crashed_ship_a.glb",
+      "kind": "structure",
+      "biomes": [
+        "any"
+      ],
+      "size": [
+        13.849,
+        5.255,
+        15.128
+      ],
+      "base_y": -0.6,
+      "aabb_center": [
+        -1.702,
+        2.027,
+        0.357
+      ],
+      "collider": {
+        "shape": "box",
+        "size": [
+          9.8,
+          5.25,
+          13.69
+        ],
+        "offset_y": -0.6,
+        "center": [
+          0.0,
+          2.02,
+          0.0
+        ]
+      },
+      "tris": 13260,
+      "notes": "Crashed explorer shuttle (~12 m of hull): fore section nose-down in the ground at +Y (Godot -Z), broken aft section with one engine left, snapped wings, scattered debris, scorched ground scar (mesh `Scar`, dark soil with glowing ember cracks). `Wreck` = ship + debris, `Scar` = ground decal-mesh sinking to -0.45 at its rim. Emissive embers (*_ember) + cyan dying screen (*_glow). Anchor_Smoke_0/1 = emitter points (breach / engine stump) for smoke or fire particles. Visible side stripe = accent orange, scorch = burnt. Collider is rough: use the box, or the two sub-boxes in `colliders`.",
+      "colliders": [
+        {
+          "shape": "box",
+          "size": [
+            9.8,
+            3.84,
+            8.59
+          ],
+          "offset_y": -0.6,
+          "center": [
+            0.0,
+            1.32,
+            -2.55
+          ],
+          "note": "fore section + wings (approx)"
+        },
+        {
+          "shape": "box",
+          "size": [
+            5.03,
+            4.77,
+            5.91
+          ],
+          "offset_y": -0.12,
+          "center": [
+            -1.47,
+            2.27,
+            3.89
+          ],
+          "note": "aft section (approx)"
+        }
+      ],
+      "tintable": [
+        "accent"
+      ],
+      "nodes": {
+        "smoke": [
+          "Anchor_Smoke_0",
+          "Anchor_Smoke_1"
+        ],
+        "meshes": [
+          "Wreck",
+          "Scar"
+        ],
+        "anchors": [
+          "Anchor_Door",
+          "Anchor_Top"
+        ]
+      }
+    },
+    {
+      "id": "drop_pod_a",
+      "file": "drop_pod_a.glb",
+      "kind": "structure",
+      "biomes": [
+        "any"
+      ],
+      "size": [
+        10.716,
+        6.115,
+        15.093
+      ],
+      "base_y": -0.742,
+      "aabb_center": [
+        -0.293,
+        2.315,
+        2.315
+      ],
+      "collider": {
+        "shape": "cylinder",
+        "radius": 1.7,
+        "height": 4.2,
+        "offset_y": -0.3,
+        "center": [
+          0,
+          1.8,
+          0
+        ]
+      },
+      "tris": 4700,
+      "notes": "Escape pod ~4 m tall, tilted in an impact crater, hatch OPEN, parachute draped behind (-Y => Godot +Z). Hierarchy: `Pod` (tilted root, children Body / Hatch / BlinkLight / InteriorLight) + static Crater, Chute, ChuteLines. `Hatch` origin = hinge (vertical axis = local Y in Godot); exported open at rotation.y = -105 deg (Blender z) - set rotation to 0 for the closed pose. `InteriorLight` = warm emissive disc inside (own material *_ilight, put an OmniLight3D there), `BlinkLight` red on the antenna. Hatch faces Blender +Y (Godot -Z). Crater sinks to -0.55; Anchor_Door in front of the hatch.",
+      "tintable": [
+        "accent"
+      ],
+      "nodes": {
+        "hatch": [
+          "Hatch"
+        ],
+        "lights": [
+          "InteriorLight",
+          "BlinkLight"
+        ],
+        "meshes": [
+          "Body",
+          "Crater",
+          "Chute",
+          "ChuteLines"
+        ],
+        "root": [
+          "Pod"
+        ],
+        "anchors": [
+          "Anchor_Door",
+          "Anchor_Top"
+        ]
+      }
+    },
+    {
+      "id": "fuel_depot_a",
+      "file": "fuel_depot_a.glb",
+      "kind": "structure",
+      "biomes": [
+        "any"
+      ],
+      "size": [
+        17.54,
+        7.586,
+        12.65
+      ],
+      "base_y": -0.5,
+      "aabb_center": [
+        0.0,
+        3.293,
+        -0.0
+      ],
+      "collider": {
+        "shape": "box",
+        "size": [
+          17.4,
+          1.0,
+          12.6
+        ],
+        "offset_y": -0.5,
+        "center": [
+          0,
+          0.0,
+          0
+        ]
+      },
+      "tris": 14052,
+      "notes": "Fuel depot (17.4 x 12.6 m slab): two 6.5 m vertical tanks with ladders/rails/catwalk, one horizontal tank, pump house (+X), yellow/steel pipe manifold, canopy dispenser bay (front-right) and drums. Front = Blender +Y = Godot -Z; Anchor_Door = stand point in front of the fuel dispenser; Anchor_Top above the tanks. Slab sinks to y=-0.5. Warm emissive lamps/gauges (material *_lamp).",
+      "colliders": [
+        {
+          "shape": "cylinder",
+          "radius": 2.2,
+          "height": 6.4,
+          "offset_y": 0.14,
+          "center": [
+            -4.4,
+            3.34,
+            -2.3
+          ],
+          "note": "tank 1"
+        },
+        {
+          "shape": "cylinder",
+          "radius": 2.2,
+          "height": 6.4,
+          "offset_y": 0.14,
+          "center": [
+            0.8,
+            3.34,
+            -2.3
+          ],
+          "note": "tank 2"
+        },
+        {
+          "shape": "box",
+          "size": [
+            8.4,
+            3.0,
+            3.0
+          ],
+          "offset_y": 0.14,
+          "center": [
+            -2.0,
+            1.6,
+            3.2
+          ],
+          "note": "horizontal tank"
+        },
+        {
+          "shape": "box",
+          "size": [
+            4.2,
+            3.2,
+            3.4
+          ],
+          "offset_y": 0.14,
+          "center": [
+            6.0,
+            1.7,
+            2.2
+          ],
+          "note": "pump house"
+        }
+      ],
+      "tintable": [
+        "accent"
+      ],
+      "nodes": {
+        "meshes": [
+          "Depot"
+        ],
+        "anchors": [
+          "Anchor_Door",
+          "Anchor_Top"
+        ]
+      }
+    },
+    {
+      "id": "landing_pad_a",
+      "file": "landing_pad_a.glb",
+      "kind": "structure",
+      "biomes": [
+        "any"
+      ],
+      "size": [
+        19.24,
+        5.182,
+        19.24
+      ],
+      "base_y": -1.5,
+      "aabb_center": [
+        0.0,
+        1.091,
+        -0.0
+      ],
+      "collider": {
+        "shape": "cylinder",
+        "radius": 9.3,
+        "height": 1.5,
+        "offset_y": -1.5,
+        "center": [
+          0,
+          -0.75,
+          0
+        ]
+      },
+      "tris": 10776,
+      "notes": "Round landing pad d=18 m. Top face at y=0 (Godot), skirt extends 1.5 m below. Collider offset_y = y of collider BOTTOM, center = collider centre (Godot axes). H marking: bars along model Y (ship nose = Godot -Z). 12 emissive cyan PadLight_00..11 (origin = light position on the rim, y=0.158) share one mesh+material; Console at 135deg (Blender -X,+Y quadrant); Anchor_Door = interact stand point in front of console; Anchor_Top = pad centre (beam origin); Anchor_Landing = pad centre.",
+      "nodes": {
+        "lights": [
+          "PadLight_00",
+          "PadLight_01",
+          "PadLight_02",
+          "PadLight_03",
+          "PadLight_04",
+          "PadLight_05",
+          "PadLight_06",
+          "PadLight_07",
+          "PadLight_08",
+          "PadLight_09",
+          "PadLight_10",
+          "PadLight_11"
+        ],
+        "anchors": [
+          "Anchor_Door",
+          "Anchor_Top",
+          "Anchor_Landing"
+        ],
+        "meshes": [
+          "Pad",
+          "Console"
+        ]
+      }
+    },
+    {
+      "id": "outpost_hab_a",
+      "file": "outpost_hab_a.glb",
+      "kind": "structure",
+      "biomes": [
+        "any"
+      ],
+      "size": [
+        12.083,
+        10.492,
+        15.834
+      ],
+      "base_y": -0.55,
+      "aabb_center": [
+        -0.321,
+        4.696,
+        -1.663
+      ],
+      "collider": {
+        "shape": "cylinder",
+        "radius": 5.7,
+        "height": 5.6,
+        "offset_y": -0.55,
+        "center": [
+          0,
+          2.25,
+          0
+        ]
+      },
+      "tris": 7220,
+      "notes": "Domed habitat d=10 m (foundation d=11.3, sinks 0.55 m below y=0). Airlock/door faces Blender +Y = Godot -Z; Anchor_Door is 3.3 m in front of the stairs. BlinkLight (red emissive sphere, own material outpost_hab_a_blink) at the antenna tip = Anchor_Top. Warm emissive windows/skylight (material *_window), green status light (*_status).",
+      "colliders": [
+        {
+          "shape": "cylinder",
+          "radius": 5.7,
+          "height": 5.6,
+          "offset_y": -0.55,
+          "center": [
+            0,
+            2.25,
+            0
+          ]
+        },
+        {
+          "shape": "box",
+          "size": [
+            3.3,
+            3.5,
+            3.4
+          ],
+          "offset_y": -0.05,
+          "center": [
+            0,
+            1.65,
+            -5.35
+          ],
+          "note": "airlock + stairs (door side = Godot -Z)"
+        }
+      ],
+      "tintable": [
+        "accent"
+      ],
+      "nodes": {
+        "blink": [
+          "BlinkLight"
+        ],
+        "anchors": [
+          "Anchor_Door",
+          "Anchor_Top"
+        ],
+        "meshes": [
+          "Hab"
+        ]
+      }
+    },
+    {
+      "id": "outpost_hab_b",
+      "file": "outpost_hab_b.glb",
+      "kind": "structure",
+      "biomes": [
+        "any"
+      ],
+      "size": [
+        26.1,
+        11.12,
+        11.1
+      ],
+      "base_y": -0.55,
+      "aabb_center": [
+        0.0,
+        5.01,
+        -1.45
+      ],
+      "collider": {
+        "shape": "box",
+        "size": [
+          25.4,
+          4.4,
+          7.0
+        ],
+        "offset_y": -0.55,
+        "center": [
+          0,
+          1.65,
+          0.0
+        ]
+      },
+      "tris": 9392,
+      "notes": "Long modular outpost (3 modules + 2 connector tubes), 25.4 m along X, front (doors/ramp) = Blender +Y = Godot -Z. Plinth sinks 0.55 m below y=0. Entrance ramp + Anchor_Door at the middle (hub) module; Anchor_Cargo at the roller door of the storage module; BlinkLight (red, own material *_blink) on the hub mast = Anchor_Top. Pipes run along the back wall.",
+      "colliders": [
+        {
+          "shape": "box",
+          "size": [
+            25.4,
+            4.4,
+            7.0
+          ],
+          "offset_y": -0.55,
+          "center": [
+            0,
+            1.65,
+            0.0
+          ]
+        },
+        {
+          "shape": "box",
+          "size": [
+            2.8,
+            0.6,
+            3.2
+          ],
+          "offset_y": -0.3,
+          "center": [
+            0,
+            0.0,
+            -5.0
+          ],
+          "note": "front ramp (optional walkable ramp)"
+        }
+      ],
+      "tintable": [
+        "accent"
+      ],
+      "nodes": {
+        "blink": [
+          "BlinkLight"
+        ],
+        "anchors": [
+          "Anchor_Door",
+          "Anchor_Top",
+          "Anchor_Cargo"
+        ],
+        "meshes": [
+          "Hab"
+        ]
+      }
+    },
+    {
+      "id": "outpost_tower_a",
+      "file": "outpost_tower_a.glb",
+      "kind": "structure",
+      "biomes": [
+        "any"
+      ],
+      "size": [
+        11.05,
+        21.34,
+        7.08
+      ],
+      "base_y": -0.55,
+      "aabb_center": [
+        0.175,
+        10.12,
+        -0.14
+      ],
+      "collider": {
+        "shape": "box",
+        "size": [
+          10.7,
+          3.0,
+          6.8
+        ],
+        "offset_y": -0.55,
+        "center": [
+          0,
+          0.95,
+          0.0
+        ]
+      },
+      "tris": 8660,
+      "notes": "Lattice comm tower ~20.5 m (4 tapered legs, orange/white aviation bands, platform, dish pointing Blender +Y/up = Godot -Z, ladder on the back face) + equipment shed on the +X side. The plinth (10.7 x 6.8 m) is centred on the origin: the tower axis is at x=-1.95 (Godot x), the shed on the +X side. BlinkLight (red, own material *_blink) at the mast tip (y~20.2) = Anchor_Top; Anchor_Door in front of the shed door.",
+      "colliders": [
+        {
+          "shape": "box",
+          "size": [
+            10.7,
+            3.0,
+            6.8
+          ],
+          "offset_y": -0.55,
+          "center": [
+            0,
+            0.95,
+            0.0
+          ],
+          "note": "plinth + shed + lower legs"
+        },
+        {
+          "shape": "box",
+          "size": [
+            4.6,
+            6.0,
+            4.6
+          ],
+          "offset_y": 0.4,
+          "center": [
+            -1.95,
+            3.4,
+            0.0
+          ],
+          "note": "lower tower (tower axis is at x=-1.95)"
+        },
+        {
+          "shape": "cylinder",
+          "radius": 0.9,
+          "height": 14.0,
+          "offset_y": 6.4,
+          "center": [
+            -1.95,
+            13.4,
+            0.0
+          ],
+          "note": "upper tower / mast core"
+        }
+      ],
+      "tintable": [
+        "accent"
+      ],
+      "nodes": {
+        "blink": [
+          "BlinkLight"
+        ],
+        "anchors": [
+          "Anchor_Door",
+          "Anchor_Top"
+        ],
+        "meshes": [
+          "Tower"
+        ]
+      }
+    },
+    {
+      "id": "ruin_arch_a",
+      "file": "ruin_arch_a.glb",
+      "kind": "structure",
+      "biomes": [
+        "any"
+      ],
+      "size": [
+        17.4,
+        12.196,
+        17.4
+      ],
+      "base_y": -0.5,
+      "aabb_center": [
+        0.0,
+        5.598,
+        -0.0
+      ],
+      "collider": {
+        "shape": "box",
+        "size": [
+          11.2,
+          2.3,
+          5.2
+        ],
+        "offset_y": -0.5,
+        "center": [
+          0,
+          0.65,
+          0.0
+        ]
+      },
+      "tris": 9642,
+      "notes": "Ancient ring gate ~12 m: a stone ring (16 blocks, 2 fallen) standing on a dais (top y=1.8, 6 steps on the front = Blender +Y = Godot -Z) over a round plaza; the ring plane is X/Y (Godot), you walk through along Z. Emissive teal runes (material *_rune, emission 3.5) incl. glowing inner edge; moss patches + vines. Anchor_Gate = ring centre (y=5.7: put a portal/energy effect there), Anchor_Door = stand point in front of the steps, Anchor_Top above the ring. Plaza sinks to y=-0.5.",
+      "colliders": [
+        {
+          "shape": "box",
+          "size": [
+            11.2,
+            2.3,
+            5.2
+          ],
+          "offset_y": -0.5,
+          "center": [
+            0,
+            0.65,
+            0.0
+          ],
+          "note": "dais (walkable top at y=1.8, steps on the Godot +Z side)"
+        },
+        {
+          "shape": "box",
+          "size": [
+            1.7,
+            7.6,
+            1.7
+          ],
+          "offset_y": 1.8,
+          "center": [
+            -4.7,
+            5.6,
+            0.0
+          ],
+          "note": "ring left side"
+        },
+        {
+          "shape": "box",
+          "size": [
+            1.7,
+            7.6,
+            1.7
+          ],
+          "offset_y": 1.8,
+          "center": [
+            4.7,
+            5.6,
+            0.0
+          ],
+          "note": "ring right side"
+        },
+        {
+          "shape": "box",
+          "size": [
+            8.6,
+            1.7,
+            1.7
+          ],
+          "offset_y": 9.6,
+          "center": [
+            0,
+            10.45,
+            0.0
+          ],
+          "note": "ring top"
+        }
+      ],
+      "nodes": {
+        "meshes": [
+          "Arch"
+        ],
+        "anchors": [
+          "Anchor_Door",
+          "Anchor_Gate",
+          "Anchor_Top"
+        ]
+      }
+    },
+    {
+      "id": "solar_array_a",
+      "file": "solar_array_a.glb",
+      "kind": "structure",
+      "biomes": [
+        "any"
+      ],
+      "size": [
+        17.22,
+        3.225,
+        11.44
+      ],
+      "base_y": -0.25,
+      "aabb_center": [
+        -0.59,
+        1.363,
+        -0.0
+      ],
+      "collider": {
+        "shape": "box",
+        "size": [
+          17.3,
+          3.0,
+          11.5
+        ],
+        "offset_y": 0.0,
+        "center": [
+          0,
+          1.5,
+          0
+        ]
+      },
+      "tris": 9196,
+      "notes": "Solar field: 2 rows x 3 tracking panels (Panel_0..5, children of Array, shared mesh) + inverter/battery cluster on the -X side. Panels face Blender +Y (Godot -Z), tilted 30 deg; each Panel_i origin = its hinge (post top); rest pose = rotation_degrees.x -30 deg (as exported); to track the sun rotate it about local X. StatusLight (green emissive, own material *_status). Anchor_Door in front of the inverter cabinet.",
+      "colliders": [
+        {
+          "shape": "box",
+          "size": [
+            4.4,
+            2.6,
+            4.2
+          ],
+          "offset_y": 0.0,
+          "center": [
+            -7.0,
+            1.3,
+            0.0
+          ],
+          "note": "equipment cluster"
+        },
+        {
+          "shape": "cylinder",
+          "radius": 0.5,
+          "height": 2.2,
+          "offset_y": 0.0,
+          "center": [
+            -2.8,
+            1.1,
+            -2.7
+          ],
+          "note": "post 0"
+        },
+        {
+          "shape": "cylinder",
+          "radius": 0.5,
+          "height": 2.2,
+          "offset_y": 0.0,
+          "center": [
+            1.5,
+            1.1,
+            -2.7
+          ],
+          "note": "post 1"
+        },
+        {
+          "shape": "cylinder",
+          "radius": 0.5,
+          "height": 2.2,
+          "offset_y": 0.0,
+          "center": [
+            5.8,
+            1.1,
+            -2.7
+          ],
+          "note": "post 2"
+        },
+        {
+          "shape": "cylinder",
+          "radius": 0.5,
+          "height": 2.2,
+          "offset_y": 0.0,
+          "center": [
+            -2.8,
+            1.1,
+            2.7
+          ],
+          "note": "post 3"
+        },
+        {
+          "shape": "cylinder",
+          "radius": 0.5,
+          "height": 2.2,
+          "offset_y": 0.0,
+          "center": [
+            1.5,
+            1.1,
+            2.7
+          ],
+          "note": "post 4"
+        },
+        {
+          "shape": "cylinder",
+          "radius": 0.5,
+          "height": 2.2,
+          "offset_y": 0.0,
+          "center": [
+            5.8,
+            1.1,
+            2.7
+          ],
+          "note": "post 5"
+        }
+      ],
+      "tintable": [
+        "accent"
+      ],
+      "nodes": {
+        "panels": [
+          "Panel_0",
+          "Panel_1",
+          "Panel_2",
+          "Panel_3",
+          "Panel_4",
+          "Panel_5"
+        ],
+        "lights": [
+          "StatusLight"
+        ],
+        "meshes": [
+          "Array"
+        ],
+        "anchors": [
+          "Anchor_Door",
+          "Anchor_Top"
+        ]
+      }
+    },
+    {
+      "id": "supply_container_a",
+      "file": "supply_container_a.glb",
+      "kind": "structure",
+      "biomes": [
+        "any"
+      ],
+      "size": [
+        2.732,
+        1.48,
+        1.515
+      ],
+      "base_y": 0.0,
+      "aabb_center": [
+        0.0,
+        0.74,
+        -0.023
+      ],
+      "collider": {
+        "shape": "box",
+        "size": [
+          2.4,
+          1.3,
+          1.3
+        ],
+        "offset_y": 0.0,
+        "center": [
+          0,
+          0.65,
+          0
+        ]
+      },
+      "tris": 3984,
+      "notes": "Rugged supply crate 2.4 x 1.3 x ~1.3 m, front (latches / label) = Blender +Y = Godot -Z. `Lid` is a child of `Body` with its origin on the hinge (back top edge): rotate it about local X by +105 deg (rotation_degrees.x = +105) to open - interior (glowing cells) is modelled. `StatusLight` (child of Body, own material *_status, cyan emissive) can be recoloured when looted. Origin at ground centre.",
+      "tintable": [
+        "orange"
+      ],
+      "nodes": {
+        "lid": [
+          "Lid"
+        ],
+        "lights": [
+          "StatusLight"
+        ],
+        "meshes": [
+          "Body"
+        ],
+        "anchors": [
+          "Anchor_Door",
+          "Anchor_Top"
+        ]
+      }
+    },
+    {
+      "id": "wind_turbine_a",
+      "file": "wind_turbine_a.glb",
+      "kind": "structure",
+      "biomes": [
+        "any"
+      ],
+      "size": [
+        9.245,
+        17.35,
+        5.87
+      ],
+      "base_y": -0.55,
+      "aabb_center": [
+        -0.013,
+        8.125,
+        -0.435
+      ],
+      "collider": {
+        "shape": "cylinder",
+        "radius": 1.2,
+        "height": 11.0,
+        "offset_y": -0.55,
+        "center": [
+          0,
+          5.0,
+          0
+        ]
+      },
+      "tris": 5244,
+      "notes": "Wind turbine ~16.9 m (hub y=11.5, blade length 5.3). Rotor faces Blender +Y (Godot -Z). `Rotor` is a child of `Tower`: its origin = the hub centre and its node is pre-rotated (-90 deg about X) so that its LOCAL Y AXIS (Godot) IS THE SHAFT: spin it with rotate_object_local(Vector3.UP, dt * speed). 3 blades (orange tips). BlinkLight = red emissive sphere on the nacelle roof (own material *_blink). Foundation sinks 0.55 m below y=0; kiosk on the +X side; Anchor_Door in front of the base door.",
+      "colliders": [
+        {
+          "shape": "cylinder",
+          "radius": 1.2,
+          "height": 11.0,
+          "offset_y": -0.55,
+          "center": [
+            0,
+            5.0,
+            0
+          ],
+          "note": "tower + foundation"
+        },
+        {
+          "shape": "box",
+          "size": [
+            1.7,
+            1.8,
+            1.3
+          ],
+          "offset_y": 0.0,
+          "center": [
+            3.1,
+            0.9,
+            0.0
+          ],
+          "note": "kiosk"
+        }
+      ],
+      "tintable": [
+        "accent"
+      ],
+      "nodes": {
+        "rotor": [
+          "Rotor"
+        ],
+        "blink": [
+          "BlinkLight"
+        ],
+        "meshes": [
+          "Tower"
+        ],
+        "anchors": [
+          "Anchor_Door",
+          "Anchor_Top"
+        ]
+      }
+    }
+  ],
+  "conventions": "Units: metres, Godot axes (x right, y up, z back; model front = -Z). Origin = ground contact / footprint centre (structures may sink below y=0: see base_y). collider.offset_y = y of the collider BOTTOM relative to the model origin; collider.center = [x, y, z] of the collider CENTRE (Godot axes, relative to the model origin); box: size = [x, y, z]; cylinder: radius + height. `colliders` (optional) = list of extra/finer parts in the same format. aabb_center = centre of the whole visible model. Anchor_* nodes are Node3D markers (Anchor_Door = where the player stands to interact, Anchor_Top = top for beams/markers). tintable = material-name substrings the game may recolour. Emissive materials use KHR_materials_emissive_strength."
+}
